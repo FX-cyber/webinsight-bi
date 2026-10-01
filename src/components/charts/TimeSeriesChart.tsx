@@ -13,7 +13,13 @@ import { formatDateId, formatNumberId } from '../../logic/format'
 import { buildTimeSeries } from '../../logic/timeSeries'
 import ChartCard from './ChartCard'
 
-export default function TimeSeriesChart({ records }: { records: WebRecord[] }) {
+export default function TimeSeriesChart({
+  records,
+  title = 'Mentions Over Time',
+}: {
+  records: WebRecord[]
+  title?: string
+}) {
   const series = useMemo(() => buildTimeSeries(records), [records])
 
   const subtitle = [
@@ -26,7 +32,7 @@ export default function TimeSeriesChart({ records }: { records: WebRecord[] }) {
     .join(' · ')
 
   return (
-    <ChartCard title="Records Over Time" subtitle={subtitle} isEmpty={series.points.length === 0}>
+    <ChartCard title={title} subtitle={subtitle} isEmpty={series.points.length === 0}>
       <ResponsiveContainer width="100%" height={260}>
         <LineChart data={series.points} margin={{ top: 8, right: 12, left: -16, bottom: 0 }}>
           <CartesianGrid stroke="var(--color-border)" vertical={false} />

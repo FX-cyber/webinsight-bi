@@ -1,11 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
-import RecordDetailModal from '../components/explorer/RecordDetailModal'
-import FilterBar from '../components/filters/FilterBar'
-import type { WebRecord } from '../contract/types'
-import { useFilters } from '../data/FilterContext'
-import { formatDateId } from '../logic/format'
-import { DEFAULT_SORT, sortRecords } from '../logic/sorting'
-import type { RecordSort, SortField } from '../logic/sorting'
+import type { WebRecord } from '../../contract/types'
+import { formatDateId } from '../../logic/format'
+import { DEFAULT_SORT, sortRecords } from '../../logic/sorting'
+import type { RecordSort, SortField } from '../../logic/sorting'
+import RecordDetailModal from './RecordDetailModal'
 
 const PAGE_SIZE = 25
 const EMPTY_CELL = '—'
@@ -19,17 +17,21 @@ const COLUMNS: { field: SortField | null; label: string }[] = [
   { field: 'topic', label: 'Topic' },
 ]
 
-export default function ExplorerPage() {
-  const { filteredRecords } = useFilters()
+/**
+ * Tabel record hasil filter: sorting sederhana, pagination 25/halaman, dan
+ * detail record. Dipakai halaman Research sehingga perilaku Explorer lama
+ * tetap utuh tanpa route terpisah.
+ */
+export default function RecordTable({ records }: { records: WebRecord[] }) {
   const [sort, setSort] = useState<RecordSort>(DEFAULT_SORT)
   const [page, setPage] = useState(1)
   const [selected, setSelected] = useState<WebRecord | null>(null)
 
-  const sorted = useMemo(() => sortRecords(filteredRecords, sort), [filteredRecords, sort])
+  const sorted = useMemo(() => sortRecords(records, sort), [records, sort])
 
   useEffect(() => {
     setPage(1)
-  }, [filteredRecords, sort])
+  }, [records, sort])
 
   const pageCount = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE))
   const safePage = Math.min(page, pageCount)
@@ -43,30 +45,12 @@ export default function ExplorerPage() {
     )
   }
 
-  if (filteredRecords.length === 0) {
-    return (
-      <section className="page">
-        <header className="page__head">
-          <h2 className="page__title">Data Explorer</h2>
-        </header>
-        <FilterBar />
-        <p className="chart-empty">Tidak ada record yang cocok dengan filter saat ini.</p>
-      </section>
-    )
+  if (sorted.length === 0) {
+    return <p className="chart-empty">Tidak ada record yang cocok dengan filter saat ini.</p>
   }
 
   return (
-    <section className="page">
-      <header className="page__head">
-        <h2 className="page__title">Data Explorer</h2>
-        <p className="page__lead">
-          Menelusuri record hasil filter yang sama dengan Overview. Klik judul untuk melihat
-          detail dan sumber aslinya.
-        </p>
-      </header>
-
-      <FilterBar />
-
+    <>
       <div className="table-wrap">
         <table className="data-table">
           <thead>
@@ -145,6 +129,6 @@ export default function ExplorerPage() {
       {selected === null ? null : (
         <RecordDetailModal record={selected} onClose={() => setSelected(null)} />
       )}
-    </section>
+    </>
   )
 }
