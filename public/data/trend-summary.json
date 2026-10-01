@@ -1,111 +1,153 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-01T10:00:00Z",
+  "generated_at": "2026-10-01T16:05:00Z",
   "window_hours": 48,
   "recent_window_hours": 24,
   "run": {
-    "id": "run-sintetis-001",
+    "id": "run-interactive-2026-10-01",
     "mode": "interactive",
-    "brief": "Brief sintetis untuk pengembangan UI WebInsight Trends - bukan hasil research nyata.",
-    "sources_visited": 5,
-    "failures": []
+    "brief": "Tren Artificial Intelligence dan teknologi digital di Indonesia dalam 48 jam terakhir",
+    "sources_visited": 8,
+    "failures": [
+      "komdigi.go.id: HTTP 403 saat mengambil siaran pers Wamen Nezar (fetch otomatis diblokir)"
+    ]
   },
   "pipeline": {
-    "fetched": 40,
-    "duplicates_removed": 2,
-    "invalid_dropped": 2,
-    "final": 36
+    "fetched": 11,
+    "duplicates_removed": 3,
+    "invalid_dropped": 6,
+    "final": 10
   },
   "topics": [
     {
-      "topic": "Teknologi Hijau",
-      "mentions": 8,
-      "sources": 5,
-      "recent_mentions": 5,
-      "trend_score": 72.4,
-      "previous_trend_score": 55.1,
-      "direction": "up",
-      "top_keywords": ["panel surya", "energi terbarukan", "mangrove"]
-    },
-    {
-      "topic": "Pariwisata Domestik",
-      "mentions": 7,
-      "sources": 5,
+      "topic": "AI Talent & Workforce",
+      "mentions": 2,
+      "sources": 2,
       "recent_mentions": 2,
-      "trend_score": 48.9,
-      "previous_trend_score": 51.3,
-      "direction": "down",
-      "top_keywords": ["homestay", "festival kuliner", "jalur pendakian"]
-    },
-    {
-      "topic": "Pendidikan Digital",
-      "mentions": 6,
-      "sources": 4,
-      "recent_mentions": 3,
-      "trend_score": 44.0,
-      "previous_trend_score": 44.0,
+      "trend_score": 64.0,
+      "previous_trend_score": null,
       "direction": "flat",
-      "top_keywords": ["belajar daring", "literasi digital", "beasiswa data"]
+      "top_keywords": ["survei developer", "talenta digital", "data center"]
     },
     {
-      "topic": "Ekonomi Kreatif",
-      "mentions": 5,
-      "sources": 4,
-      "recent_mentions": 3,
-      "trend_score": 39.6,
-      "previous_trend_score": 30.2,
-      "direction": "up",
-      "top_keywords": ["marketplace kerajinan", "film pendek", "musisi lokal"]
-    },
-    {
-      "topic": "Transportasi Kota",
+      "topic": "AI Adoption & UMKM Digitalization",
       "mentions": 4,
-      "sources": 3,
-      "recent_mentions": 1,
-      "trend_score": 22.8,
-      "previous_trend_score": 26.4,
-      "direction": "down",
-      "top_keywords": ["rute bus", "jalur sepeda", "terminal"]
+      "sources": 4,
+      "recent_mentions": 0,
+      "trend_score": 40.5,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": ["SIAP 2026", "UMKM", "Google Gemini", "SMESCO"]
+    },
+    {
+      "topic": "AI Investment & Markets",
+      "mentions": 1,
+      "sources": 1,
+      "recent_mentions": 0,
+      "trend_score": 28.8,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": ["saham teknologi", "bisnis AI"]
+    },
+    {
+      "topic": "AI Productivity & Work",
+      "mentions": 1,
+      "sources": 1,
+      "recent_mentions": 0,
+      "trend_score": 28.8,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": ["produktivitas", "PHK"]
+    },
+    {
+      "topic": "AI in Government Services",
+      "mentions": 1,
+      "sources": 1,
+      "recent_mentions": 0,
+      "trend_score": 28.8,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": ["TEI 2026", "Kemendag"]
+    },
+    {
+      "topic": "Digital Economy & Fintech",
+      "mentions": 1,
+      "sources": 1,
+      "recent_mentions": 0,
+      "trend_score": 28.8,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": ["FEKDI", "IFSE", "inklusi keuangan"]
     }
   ],
   "signals": [
     {
       "id": "SIG-001",
-      "title": "Program energi surya atap diperluas di Kota Sampel",
-      "topic": "Teknologi Hijau",
-      "entity": "Dinas Energi Kota Sampel",
-      "record_ids": ["SMP-001", "SMP-003", "SMP-005"],
-      "sources": ["contoh-news.test", "kampus-fiktif.test", "portal-contoh.test"],
-      "evidence_count": 3,
+      "title": "SMESCO dan Google Gemini meluncurkan SIAP 2026 untuk digitalisasi UMKM",
+      "topic": "AI Adoption & UMKM Digitalization",
+      "entity": "SMESCO Indonesia",
+      "record_ids": ["WEB-001", "WEB-002", "WEB-003", "WEB-004"],
+      "sources": ["umkm.go.id", "antaranews.com", "monitor.co.id", "indoposco.id"],
+      "evidence_count": 4,
       "status": "cross-source"
     },
     {
       "id": "SIG-002",
-      "title": "Kunjungan wisata desa naik setelah festival kuliner",
-      "topic": "Pariwisata Domestik",
-      "entity": null,
-      "record_ids": ["SMP-009", "SMP-013"],
-      "sources": ["riset-uji.test", "kampus-fiktif.test"],
-      "evidence_count": 2,
-      "status": "cross-source"
+      "title": "Agoda AI Developer Report 2026: kepercayaan developer Indonesia pada AI tinggi",
+      "topic": "AI Talent & Workforce",
+      "entity": "Agoda",
+      "record_ids": ["WEB-005"],
+      "sources": ["kompas.com"],
+      "evidence_count": 1,
+      "status": "single-source"
     },
     {
       "id": "SIG-003",
-      "title": "Platform belajar daring fiktif diperkenalkan untuk sekolah",
-      "topic": "Pendidikan Digital",
-      "entity": "Universitas Fiktif Nusantara",
-      "record_ids": ["SMP-016", "SMP-021"],
-      "sources": ["contoh-news.test"],
-      "evidence_count": 2,
+      "title": "FEKDI x IFSE 2026 dijadikan mesin akselerasi ekonomi keuangan digital",
+      "topic": "Digital Economy & Fintech",
+      "entity": "Bank Indonesia",
+      "record_ids": ["WEB-008"],
+      "sources": ["detik.com"],
+      "evidence_count": 1,
       "status": "single-source"
     },
     {
       "id": "SIG-004",
-      "title": "Perpanjangan rute bus kota diumumkan",
-      "topic": "Transportasi Kota",
-      "entity": "Badan Data Sintetis",
-      "record_ids": ["SMP-030"],
-      "sources": ["portal-contoh.test"],
+      "title": "Kemendag menghadirkan jasa berbasis AI pertama kali di TEI 2026",
+      "topic": "AI in Government Services",
+      "entity": "Kemendag",
+      "record_ids": ["WEB-010"],
+      "sources": ["antaranews.com"],
+      "evidence_count": 1,
+      "status": "single-source"
+    },
+    {
+      "id": "SIG-005",
+      "title": "Kebutuhan daya dan talenta digital disebut kunci infrastruktur AI Indonesia",
+      "topic": "AI Talent & Workforce",
+      "entity": "IIDCC",
+      "record_ids": ["WEB-006"],
+      "sources": ["wartaekonomi.co.id"],
+      "evidence_count": 1,
+      "status": "single-source"
+    },
+    {
+      "id": "SIG-006",
+      "title": "Klaim adopsi AI menaikkan produktivitas perusahaan tanpa PHK",
+      "topic": "AI Productivity & Work",
+      "entity": null,
+      "record_ids": ["WEB-007"],
+      "sources": ["kompas.com"],
+      "evidence_count": 1,
+      "status": "single-source"
+    },
+    {
+      "id": "SIG-007",
+      "title": "Ekosistem AI dinilai membuka peluang bisnis dan saham teknologi",
+      "topic": "AI Investment & Markets",
+      "entity": "Indosat",
+      "record_ids": ["WEB-009"],
+      "sources": ["cnbcindonesia.com"],
       "evidence_count": 1,
       "status": "single-source"
     }

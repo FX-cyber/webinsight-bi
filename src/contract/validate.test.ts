@@ -243,16 +243,16 @@ describe('validateDatasetText', () => {
 describe('fixture publik', () => {
   it('web-data.json: seluruh record valid tanpa issue', () => {
     const result = validateDataset(readFixture('web-data.json'))
+    expect(result.stats.totalRecords).toBeGreaterThan(0)
     expect(result.stats).toMatchObject({
-      totalRecords: 36,
-      validRecords: 36,
+      validRecords: result.stats.totalRecords,
       invalidRecords: 0,
       duplicateRecords: 0,
       invalidDates: 0,
       metadataRecordCountMismatch: false,
     })
     expect(result.issues).toEqual([])
-    expect(result.dataset?.records).toHaveLength(36)
+    expect(result.dataset?.records).toHaveLength(result.stats.totalRecords)
   })
 
   it('sample-invalid.json: hitungan valid/invalid/duplikat sesuai fixture', () => {
