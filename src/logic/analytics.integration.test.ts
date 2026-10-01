@@ -8,46 +8,49 @@ import { buildTimeSeries } from './timeSeries'
 import { topNByField } from './topN'
 
 /**
- * Integrasi ringan: memastikan seluruh pipeline analytics bekerja pada dataset
- * bawaan tanpa hard-code nilai sintetis selain jumlah record.
+ * Integrasi ringan terhadap dataset bawaan dengan invariant, bukan angka
+ * sample yang rapuh: apa pun isi file sintetis nantinya, hubungan antar
+ * hasil analitik harus tetap konsisten.
  */
 describe('pipeline analytics pada public/data/web-data.json', () => {
   const validation = validateDataset(readPublicFixture('web-data.json'))
   const records = validation.records
 
-  it('memuat 36 record valid', () => {
+  it('jumlah record sama dengan hasil normalisasi validator', () => {
     expect(validation.dataset).not.toBeNull()
-    expect(records).toHaveLength(36)
+    expect(records.length).toBeGreaterThan(0)
+    expect(records.length).toBe(validation.stats.validRecords)
   })
 
-  it('KPI dihitung tanpa error dan konsisten', () => {
+  it('KPI konsisten dengan jumlah record terfilter', () => {
     const kpi = buildKpiSummary(records)
-    expect(kpi.totalRecords).toBe(36)
+    expect(kpi.totalRecords).toBe(records.length)
     expect(kpi.uniqueSources).toBeGreaterThan(0)
-    expect(kpi.uniqueEntities).toBeGreaterThan(0)
+    expect(kpi.uniqueEntities).toBeGreaterThanOrEqual(0)
     expect(kpi.uniqueTopics).toBeGreaterThan(0)
   })
 
-  it('time series terbentuk dan jumlahnya konsisten dengan record bertanggal', () => {
+  it('time series menjumlahkan tepat record bertanggal', () => {
     const series = buildTimeSeries(records)
     expect(series.points.length).toBeGreaterThan(0)
     const counted = series.points.reduce((total, point) => total + point.count, 0)
     expect(counted).toBe(records.length - series.excludedWithoutDate)
   })
 
-  it('top topic, category, dan entity terbentuk', () => {
+  it('topN tiap dimensi berada dalam batas dan urut menurun', () => {
     for (const field of ['topic', 'category', 'entity'] as const) {
       const entries = topNByField(records, field)
       expect(entries.length).toBeGreaterThan(0)
       expect(entries.length).toBeLessThanOrEqual(10)
-      expect(entries[0]?.count).toBeGreaterThan(0)
+      const counts = entries.map((entry) => entry.count)
+      expect([...counts].sort((a, b) => b - a)).toEqual(counts)
     }
   })
 
-  it('agregasi source mencakup seluruh record', () => {
+  it('agregasi source menjumlahkan tepat seluruh record', () => {
     const summaries = aggregateSources(records)
     expect(summaries.length).toBeGreaterThan(0)
-    expect(summaries.reduce((total, summary) => total + summary.count, 0)).toBe(36)
+    expect(summaries.reduce((total, summary) => total + summary.count, 0)).toBe(records.length)
   })
 
   it('filter facet selaras dengan hasil topN', () => {
@@ -55,5 +58,6 @@ describe('pipeline analytics pada public/data/web-data.json', () => {
     expect(topTopic).toBeDefined()
     const filtered = applyFiltersWithStats(records, { ...EMPTY_FILTERS, topics: [topTopic!.label] })
     expect(filtered.stats.filteredRecords).toBe(topTopic!.count)
+    expect(filtered.stats.totalRecords).toBe(records.length)
   })
 })

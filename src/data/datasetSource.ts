@@ -1,5 +1,7 @@
 import { validateDataset, validateDatasetText } from '../contract/validate'
+import { parseTrendSummary } from '../contract/trend'
 import type { ValidationIssue, ValidationResult } from '../contract/validate'
+import type { TrendSummary } from '../contract/types'
 
 /**
  * Sumber dataset: memuat bawaan lewat fetch dan menilai dataset impor.
@@ -48,6 +50,26 @@ export async function loadDefaultDataset(): Promise<DefaultLoadOutcome> {
     }
   }
   return { kind: 'ready', validation }
+}
+
+export const TREND_SUMMARY_PATH = 'data/trend-summary.json'
+
+export function trendSummaryUrl(): string {
+  return `${import.meta.env.BASE_URL}${TREND_SUMMARY_PATH}`
+}
+
+/**
+ * Memuat ringkasan tren secara non-fatal. Berkas ini pelengkap: hilangnya file
+ * atau bentuk yang tidak valid menghasilkan null, bukan error aplikasi.
+ */
+export async function loadTrendSummary(): Promise<TrendSummary | null> {
+  try {
+    const response = await fetch(trendSummaryUrl())
+    if (!response.ok) return null
+    return parseTrendSummary(JSON.parse(await response.text()))
+  } catch {
+    return null
+  }
 }
 
 export type ImportDecision =

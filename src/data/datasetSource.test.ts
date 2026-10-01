@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { evaluateImport, loadDefaultDataset, resolveRestore } from './datasetSource'
+import { evaluateImport, loadDefaultDataset, loadTrendSummary, resolveRestore } from './datasetSource'
 
 const readFixture = (name: string): unknown =>
   JSON.parse(readFileSync(fileURLToPath(new URL(`../../public/data/${name}`, import.meta.url)), 'utf8'))
@@ -137,5 +137,64 @@ describe('resolveRestore', () => {
     const decision = evaluateImport(JSON.parse(envelopeJson([validRecord()])))
     if (!decision.accepted) throw new Error('fixture harus diterima')
     expect(resolveRestore(decision.validation)).toMatchObject({ kind: 'cache' })
+  })
+})
+
+describe('loadTrendSummary (non-fatal)', () => {
+  const validTrend = {
+    schema_version: '1.0',
+    generated_at: '2026-10-01T10:00:00Z',
+    window_hours: 48,
+    recent_window_hours: 24,
+    run: { id: 'r-1', mode: 'interactive', brief: 'brief', sources_visited: 1, failures: [] },
+    pipeline: { fetched: 1, duplicates_removed: 0, invalid_dropped: 0, final: 1 },
+    topics: [],
+    signals: [],
+  }
+
+  const stubByUrl = (handler: (url: string) => Response | 'throw') => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((input: unknown) => {
+        const result = handler(String(input))
+        return result === 'throw'
+          ? Promise.reject(new Error('network down'))
+          : Promise.resolve(result)
+      }),
+    )
+  }
+
+  it('mengembalikan ringkasan saat file valid', async () => {
+    stubByUrl(() => new Response(JSON.stringify(validTrend), { status: 200 }))
+    const summary = await loadTrendSummary()
+    expect(summary).not.toBeNull()
+    expect(summary?.run.id).toBe('r-1')
+  })
+
+  it('mengembalikan null saat file tidak ditemukan', async () => {
+    stubByUrl(() => new Response('not found', { status: 404 }))
+    expect(await loadTrendSummary()).toBeNull()
+  })
+
+  it('mengembalikan null saat response bukan JSON', async () => {
+    stubByUrl(() => new Response('<html>rusak', { status: 200 }))
+    expect(await loadTrendSummary()).toBeNull()
+  })
+
+  it('mengembalikan null saat bentuk tidak sesuai kontrak', async () => {
+    stubByUrl(() => new Response(JSON.stringify({ schema_version: '1.0' }), { status: 200 }))
+    expect(await loadTrendSummary()).toBeNull()
+  })
+
+  it('dataset bawaan tetap ready walau trend-summary gagal', async () => {
+    stubByUrl((url) =>
+      url.includes('trend-summary')
+        ? new Response('boom', { status: 500 })
+        : new Response(envelopeJson([validRecord()]), { status: 200 }),
+    )
+    const dataset = await loadDefaultDataset()
+    const trend = await loadTrendSummary()
+    expect(dataset.kind).toBe('ready')
+    expect(trend).toBeNull()
   })
 })

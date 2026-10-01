@@ -6,7 +6,7 @@ import { formatDateTimeId } from '../../logic/format'
  * lengkap baru ditampilkan pada halaman Import (T8).
  */
 export default function DatasetStatus() {
-  const { status, activeDataset, records, origin, stats } = useDataset()
+  const { status, activeDataset, records, origin, stats, trendSummary } = useDataset()
 
   if (status === 'loading') {
     return (
@@ -45,6 +45,15 @@ export default function DatasetStatus() {
         <span className="dataset-bar__label">Record aktif</span>
         {records.length}
       </span>
+      {trendSummary === null ? null : (
+        <span className="dataset-bar__item">
+          <span className="dataset-bar__label">Run tren</span>
+          {formatDateTimeId(trendSummary.generated_at)} · {trendSummary.run.mode}
+        </span>
+      )}
+      {trendSummary !== null && trendSummary.run.failures.length > 0 ? (
+        <span className="badge badge--warning">{trendSummary.run.failures.length} sumber gagal</span>
+      ) : null}
       {ignoredRecords > 0 ? (
         <span className="badge badge--warning">{ignoredRecords} record diabaikan</span>
       ) : null}

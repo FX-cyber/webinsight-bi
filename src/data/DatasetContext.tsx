@@ -1,10 +1,11 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
-import type { DatasetOrigin, WebDataset, WebRecord } from '../contract/types'
+import type { DatasetOrigin, TrendSummary, WebDataset, WebRecord } from '../contract/types'
 import type { ValidationIssue, ValidationResult, ValidationStats } from '../contract/validate'
 import {
   evaluateImport,
   loadDefaultDataset,
+  loadTrendSummary,
   resolveRestore,
 } from './datasetSource'
 import type { ImportDecision } from './datasetSource'
@@ -26,6 +27,8 @@ interface DatasetContextValue {
   stats: ValidationStats | null
   issues: ValidationIssue[]
   error: string | null
+  /** Ringkasan tren pelengkap; null bila file tidak ada, rusak, atau dataset impor aktif. */
+  trendSummary: TrendSummary | null
   retryDefaultDataset: () => void
   importDataset: (input: unknown) => ImportDecision
   restoreDefaultDataset: () => void
@@ -40,7 +43,9 @@ export function DatasetProvider({ children }: { children: ReactNode }) {
   const [stats, setStats] = useState<ValidationStats | null>(null)
   const [issues, setIssues] = useState<ValidationIssue[]>([])
   const [error, setError] = useState<string | null>(null)
+  const [trendSummary, setTrendSummary] = useState<TrendSummary | null>(null)
   const bundledCache = useRef<ValidationResult | null>(null)
+  const trendCache = useRef<TrendSummary | null>(null)
 
   const applyValidation = useCallback(
     (validation: ValidationResult, nextOrigin: DatasetOrigin) => {
@@ -57,7 +62,7 @@ export function DatasetProvider({ children }: { children: ReactNode }) {
   const loadDefault = useCallback(async () => {
     setStatus('loading')
     setError(null)
-    const outcome = await loadDefaultDataset()
+    const [outcome, trend] = await Promise.all([loadDefaultDataset(), loadTrendSummary()])
     if (outcome.kind === 'error') {
       setActiveDataset(null)
       setStats(null)
@@ -68,13 +73,15 @@ export function DatasetProvider({ children }: { children: ReactNode }) {
       return
     }
     bundledCache.current = outcome.validation
+    trendCache.current = trend
+    setTrendSummary(trend)
     applyValidation(outcome.validation, 'bundled')
   }, [applyValidation])
 
   useEffect(() => {
     let cancelled = false
     const run = async () => {
-      const outcome = await loadDefaultDataset()
+      const [outcome, trend] = await Promise.all([loadDefaultDataset(), loadTrendSummary()])
       if (cancelled) return
       if (outcome.kind === 'error') {
         setActiveDataset(null)
@@ -85,6 +92,8 @@ export function DatasetProvider({ children }: { children: ReactNode }) {
         return
       }
       bundledCache.current = outcome.validation
+      trendCache.current = trend
+      setTrendSummary(trend)
       applyValidation(outcome.validation, 'bundled')
     }
     void run()
@@ -103,6 +112,7 @@ export function DatasetProvider({ children }: { children: ReactNode }) {
       void loadDefault()
       return
     }
+    setTrendSummary(trendCache.current)
     applyValidation(source.validation, 'bundled')
   }, [applyValidation, loadDefault])
 
@@ -110,6 +120,7 @@ export function DatasetProvider({ children }: { children: ReactNode }) {
     (input: unknown): ImportDecision => {
       const decision = evaluateImport(input)
       if (!decision.accepted) return decision
+      setTrendSummary(null)
       applyValidation(decision.validation, 'imported')
       return decision
     },
@@ -125,6 +136,7 @@ export function DatasetProvider({ children }: { children: ReactNode }) {
       stats,
       issues,
       error,
+      trendSummary,
       retryDefaultDataset,
       importDataset,
       restoreDefaultDataset,
@@ -136,6 +148,7 @@ export function DatasetProvider({ children }: { children: ReactNode }) {
       stats,
       issues,
       error,
+      trendSummary,
       retryDefaultDataset,
       importDataset,
       restoreDefaultDataset,

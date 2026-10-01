@@ -65,3 +65,62 @@ export interface WebDataset {
 
 /** Asal dataset yang sedang aktif. */
 export type DatasetOrigin = 'bundled' | 'imported'
+
+/* ---------- Trend intelligence (aditif; tidak mengubah WebRecord) ---------- */
+
+/** Arah pergerakan skor tren dibandingkan run sebelumnya. */
+export type TrendDirection = 'up' | 'down' | 'flat'
+
+/**
+ * Status verifikasi signal: cross-source hanya bila record pendukung berasal
+ * dari minimal dua source berbeda atas klaim yang sama.
+ */
+export type TrendSignalStatus = 'cross-source' | 'single-source'
+
+export interface TrendRun {
+  id: string
+  mode: 'interactive' | 'automated'
+  brief: string
+  sources_visited: number
+  failures: string[]
+}
+
+export interface TrendPipeline {
+  fetched: number
+  duplicates_removed: number
+  invalid_dropped: number
+  final: number
+}
+
+export interface TrendTopic {
+  topic: string
+  mentions: number
+  sources: number
+  recent_mentions: number
+  trend_score: number
+  previous_trend_score: number | null
+  direction: TrendDirection
+  top_keywords: string[]
+}
+
+export interface TrendSignal {
+  id: string
+  title: string
+  topic: string
+  entity: string | null
+  record_ids: string[]
+  sources: string[]
+  evidence_count: number
+  status: TrendSignalStatus
+}
+
+export interface TrendSummary {
+  schema_version: string
+  generated_at: string
+  window_hours: number
+  recent_window_hours: number
+  run: TrendRun
+  pipeline: TrendPipeline
+  topics: TrendTopic[]
+  signals: TrendSignal[]
+}
