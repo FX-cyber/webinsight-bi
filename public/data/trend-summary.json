@@ -1,153 +1,225 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-01T16:05:00Z",
+  "generated_at": "2026-10-01T17:02:06Z",
   "window_hours": 48,
   "recent_window_hours": 24,
   "run": {
-    "id": "run-interactive-2026-10-01",
-    "mode": "interactive",
-    "brief": "Tren Artificial Intelligence dan teknologi digital di Indonesia dalam 48 jam terakhir",
-    "sources_visited": 8,
+    "id": "run-automated-2026-10-01-1642z",
+    "mode": "automated",
+    "brief": "Perkembangan yang sedang memperoleh perhatian di public web Indonesia lintas domain (Technology & Digital, Business & Economy, Jobs & Career, Education, Tourism, Agriculture & Food, Industry, Public Services, Environment) dalam 48 jam terakhir, dengan recent window 24 jam",
+    "sources_visited": 13,
     "failures": [
-      "komdigi.go.id: HTTP 403 saat mengambil siaran pers Wamen Nezar (fetch otomatis diblokir)"
+      "bps.go.id: HTTP 403 saat membuka rilis resmi inflasi September 2026 (fetch otomatis diblokir)",
+      "money.kompas.com: HTTP 404 untuk artikel inflasi September 2026",
+      "kompas.com: HTTP 404 untuk artikel peringatan BMKG hujan lebat 1 Oktober 2026",
+      "money.kompas.com: HTTP 404 untuk artikel BSU 2026 Rp900 ribu",
+      "ekonomi.bisnis.com: HTTP 403 untuk artikel proyeksi inflasi September 2026",
+      "teknologi.bisnis.com: HTTP 403 untuk artikel data center BDx Jatiluhur disetop sementara",
+      "metrotvnews.com: fetch gagal untuk artikel 4 marketplace pungut PPh 22 per 1 Oktober 2026",
+      "infobanknews.com: fetch gagal untuk artikel kunjungan wisman Agustus 2026",
+      "databoks.katadata.co.id: fetch gagal untuk artikel sektor saham 1 Oktober 2026",
+      "nasional.kontan.co.id: fetch gagal untuk artikel BGN 480 dapur MBG Oktober 2026",
+      "bmkg.go.id: fetch gagal untuk prakiraan cuaca sepekan 25 September-1 Oktober 2026",
+      "aceh.tribunnews.com: HTTP 403 untuk artikel siaga hujan lebat Aceh 1-2 Oktober 2026",
+      "m.antaranews.com: fetch gagal pada URL AMP artikel BGN 480 SPPG (berhasil pada URL non-AMP)"
     ]
   },
   "pipeline": {
-    "fetched": 11,
-    "duplicates_removed": 3,
-    "invalid_dropped": 6,
-    "final": 10
+    "fetched": 21,
+    "duplicates_removed": 0,
+    "invalid_dropped": 2,
+    "final": 19
   },
   "topics": [
     {
-      "topic": "AI Talent & Workforce",
+      "topic": "September Inflation & Food Prices",
+      "mentions": 3,
+      "sources": 3,
+      "recent_mentions": 3,
+      "trend_score": 67.6,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": ["inflasi 3,28%", "0,30% bulanan", "IHK 112,31", "harga cabai", "emas"]
+    },
+    {
+      "topic": "Foreign Tourist Arrivals Growth",
+      "mentions": 3,
+      "sources": 3,
+      "recent_mentions": 3,
+      "trend_score": 67.6,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": ["wisman 1,59 juta", "naik 6,27% yoy", "10,58 juta", "Malaysia", "Australia"]
+    },
+    {
+      "topic": "Manufacturing PMI Expansion",
       "mentions": 2,
       "sources": 2,
       "recent_mentions": 2,
       "trend_score": 64.0,
       "previous_trend_score": null,
       "direction": "flat",
-      "top_keywords": ["survei developer", "talenta digital", "data center"]
+      "top_keywords": ["PMI 52,4", "S&P Global", "pesanan baru", "ekspansi"]
     },
     {
-      "topic": "AI Adoption & UMKM Digitalization",
-      "mentions": 4,
-      "sources": 4,
-      "recent_mentions": 0,
-      "trend_score": 40.5,
+      "topic": "Wage Subsidy (BSU) Q4 Disbursement",
+      "mentions": 2,
+      "sources": 2,
+      "recent_mentions": 2,
+      "trend_score": 64.0,
       "previous_trend_score": null,
       "direction": "flat",
-      "top_keywords": ["SIAP 2026", "UMKM", "Google Gemini", "SMESCO"]
+      "top_keywords": ["BSU Rp900 ribu", "13,3 juta pekerja", "triwulan IV", "BPJS Ketenagakerjaan"]
     },
     {
-      "topic": "AI Investment & Markets",
+      "topic": "Farmer Terms of Trade (NTP) Improvement",
+      "mentions": 2,
+      "sources": 2,
+      "recent_mentions": 2,
+      "trend_score": 64.0,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": ["NTP 131,11", "naik 1,49%", "hortikultura", "harga diterima petani"]
+    },
+    {
+      "topic": "Data Center Investment & Infrastructure Readiness",
+      "mentions": 2,
+      "sources": 2,
+      "recent_mentions": 2,
+      "trend_score": 64.0,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": ["data center Batam", "Rp500 triliun", "3,5 GW 2030", "pasokan energi dan air"]
+    },
+    {
+      "topic": "MBG Kitchen Expansion to 3T Regions",
+      "mentions": 2,
+      "sources": 2,
+      "recent_mentions": 1,
+      "trend_score": 49.0,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": ["480 SPPG", "wilayah 3T", "16 provinsi", "aktif 2 Oktober"]
+    },
+    {
+      "topic": "Hydrometeorological Weather Warning",
+      "mentions": 2,
+      "sources": 2,
+      "recent_mentions": 0,
+      "trend_score": 34.0,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": ["peringatan dini BMKG", "siaga hujan lebat", "Aceh", "Sumatera Utara", "angin kencang"]
+    },
+    {
+      "topic": "B50 Biodiesel Mandate",
       "mentions": 1,
       "sources": 1,
       "recent_mentions": 0,
       "trend_score": 28.8,
       "previous_trend_score": null,
       "direction": "flat",
-      "top_keywords": ["saham teknologi", "bisnis AI"]
-    },
-    {
-      "topic": "AI Productivity & Work",
-      "mentions": 1,
-      "sources": 1,
-      "recent_mentions": 0,
-      "trend_score": 28.8,
-      "previous_trend_score": null,
-      "direction": "flat",
-      "top_keywords": ["produktivitas", "PHK"]
-    },
-    {
-      "topic": "AI in Government Services",
-      "mentions": 1,
-      "sources": 1,
-      "recent_mentions": 0,
-      "trend_score": 28.8,
-      "previous_trend_score": null,
-      "direction": "flat",
-      "top_keywords": ["TEI 2026", "Kemendag"]
-    },
-    {
-      "topic": "Digital Economy & Fintech",
-      "mentions": 1,
-      "sources": 1,
-      "recent_mentions": 0,
-      "trend_score": 28.8,
-      "previous_trend_score": null,
-      "direction": "flat",
-      "top_keywords": ["FEKDI", "IFSE", "inklusi keuangan"]
+      "top_keywords": ["B50", "SPBU", "Dirjen EBTKE", "1 Oktober 2026"]
     }
   ],
   "signals": [
     {
       "id": "SIG-001",
-      "title": "SMESCO dan Google Gemini meluncurkan SIAP 2026 untuk digitalisasi UMKM",
-      "topic": "AI Adoption & UMKM Digitalization",
-      "entity": "SMESCO Indonesia",
-      "record_ids": ["WEB-001", "WEB-002", "WEB-003", "WEB-004"],
-      "sources": ["umkm.go.id", "antaranews.com", "monitor.co.id", "indoposco.id"],
-      "evidence_count": 4,
+      "title": "BPS mencatat inflasi September 2026 sebesar 0,30% bulanan dan 3,28% tahunan",
+      "topic": "September Inflation & Food Prices",
+      "entity": "Badan Pusat Statistik",
+      "record_ids": ["WEB-004", "WEB-005", "WEB-006"],
+      "sources": ["kompas.tv", "antaranews.com", "voi.id"],
+      "evidence_count": 3,
       "status": "cross-source"
     },
     {
       "id": "SIG-002",
-      "title": "Agoda AI Developer Report 2026: kepercayaan developer Indonesia pada AI tinggi",
-      "topic": "AI Talent & Workforce",
-      "entity": "Agoda",
-      "record_ids": ["WEB-005"],
-      "sources": ["kompas.com"],
-      "evidence_count": 1,
-      "status": "single-source"
+      "title": "Kunjungan wisman Agustus 2026 naik, akumulasi Januari-Agustus tembus 10,58 juta",
+      "topic": "Foreign Tourist Arrivals Growth",
+      "entity": "Badan Pusat Statistik",
+      "record_ids": ["WEB-007", "WEB-008", "WEB-009"],
+      "sources": ["validnews.id", "investortrust.id", "antaranews.com"],
+      "evidence_count": 3,
+      "status": "cross-source"
     },
     {
       "id": "SIG-003",
-      "title": "FEKDI x IFSE 2026 dijadikan mesin akselerasi ekonomi keuangan digital",
-      "topic": "Digital Economy & Fintech",
-      "entity": "Bank Indonesia",
-      "record_ids": ["WEB-008"],
-      "sources": ["detik.com"],
+      "title": "PMI manufaktur Indonesia kembali ekspansi ke 52,4 pada September 2026",
+      "topic": "Manufacturing PMI Expansion",
+      "entity": "S&P Global",
+      "record_ids": ["WEB-001", "WEB-002"],
+      "sources": ["kontan.co.id", "idxchannel.com"],
+      "evidence_count": 2,
+      "status": "cross-source"
+    },
+    {
+      "id": "SIG-004",
+      "title": "BSU triwulan IV 2026 Rp900 ribu disalurkan untuk 13,3 juta pekerja",
+      "topic": "Wage Subsidy (BSU) Q4 Disbursement",
+      "entity": "Kementerian Koordinator Bidang Perekonomian",
+      "record_ids": ["WEB-012", "WEB-013"],
+      "sources": ["detik.com", "kompas.tv"],
+      "evidence_count": 2,
+      "status": "cross-source"
+    },
+    {
+      "id": "SIG-005",
+      "title": "NTP September 2026 naik 1,49% menjadi 131,11",
+      "topic": "Farmer Terms of Trade (NTP) Improvement",
+      "entity": "Badan Pusat Statistik",
+      "record_ids": ["WEB-016", "WEB-017"],
+      "sources": ["hortikultura.pertanian.go.id", "detik.com"],
+      "evidence_count": 2,
+      "status": "cross-source"
+    },
+    {
+      "id": "SIG-006",
+      "title": "BGN mengaktivasi 480 dapur SPPG di wilayah 3T mulai 2 Oktober 2026",
+      "topic": "MBG Kitchen Expansion to 3T Regions",
+      "entity": "Badan Gizi Nasional",
+      "record_ids": ["WEB-010", "WEB-011"],
+      "sources": ["cnnindonesia.com", "antaranews.com"],
+      "evidence_count": 2,
+      "status": "cross-source"
+    },
+    {
+      "id": "SIG-007",
+      "title": "BMKG menetapkan tiga provinsi siaga hujan lebat untuk 1-2 Oktober 2026",
+      "topic": "Hydrometeorological Weather Warning",
+      "entity": "BMKG",
+      "record_ids": ["WEB-014", "WEB-015"],
+      "sources": ["kompas.tv", "disway.id"],
+      "evidence_count": 2,
+      "status": "cross-source"
+    },
+    {
+      "id": "SIG-008",
+      "title": "Seluruh SPBU menjual biodiesel B50 secara penuh mulai 1 Oktober 2026",
+      "topic": "B50 Biodiesel Mandate",
+      "entity": "Kementerian ESDM",
+      "record_ids": ["WEB-003"],
+      "sources": ["cnbcindonesia.com"],
       "evidence_count": 1,
       "status": "single-source"
     },
     {
-      "id": "SIG-004",
-      "title": "Kemendag menghadirkan jasa berbasis AI pertama kali di TEI 2026",
-      "topic": "AI in Government Services",
-      "entity": "Kemendag",
-      "record_ids": ["WEB-010"],
+      "id": "SIG-009",
+      "title": "BP Batam menyebut investasi pusat data sekitar Rp500 triliun perlu kesiapan energi dan air",
+      "topic": "Data Center Investment & Infrastructure Readiness",
+      "entity": "BP Batam",
+      "record_ids": ["WEB-018"],
       "sources": ["antaranews.com"],
       "evidence_count": 1,
       "status": "single-source"
     },
     {
-      "id": "SIG-005",
-      "title": "Kebutuhan daya dan talenta digital disebut kunci infrastruktur AI Indonesia",
-      "topic": "AI Talent & Workforce",
-      "entity": "IIDCC",
-      "record_ids": ["WEB-006"],
-      "sources": ["wartaekonomi.co.id"],
-      "evidence_count": 1,
-      "status": "single-source"
-    },
-    {
-      "id": "SIG-006",
-      "title": "Klaim adopsi AI menaikkan produktivitas perusahaan tanpa PHK",
-      "topic": "AI Productivity & Work",
-      "entity": null,
-      "record_ids": ["WEB-007"],
-      "sources": ["kompas.com"],
-      "evidence_count": 1,
-      "status": "single-source"
-    },
-    {
-      "id": "SIG-007",
-      "title": "Ekosistem AI dinilai membuka peluang bisnis dan saham teknologi",
-      "topic": "AI Investment & Markets",
-      "entity": "Indosat",
-      "record_ids": ["WEB-009"],
-      "sources": ["cnbcindonesia.com"],
+      "id": "SIG-010",
+      "title": "Kapasitas pusat data 3,5 GW pada 2030 dinilai membuka pasar baru bagi industri asuransi",
+      "topic": "Data Center Investment & Infrastructure Readiness",
+      "entity": "Asuransi Asei",
+      "record_ids": ["WEB-019"],
+      "sources": ["kontan.co.id"],
       "evidence_count": 1,
       "status": "single-source"
     }
