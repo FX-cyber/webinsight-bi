@@ -1,0 +1,59 @@
+:root {
+  /* Warna dasar */
+  --color-bg: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f2f4f7;
+  --color-border: #e2e6ec;
+  --color-border-strong: #c9d0da;
+  --color-text: #171a20;
+  --color-text-muted: #5b6472;
+
+  /* Warna aksen */
+  --color-primary: #2f5bea;
+  --color-primary-hover: #2449c9;
+  --color-primary-soft: #e9efff;
+  --color-success: #1c7a45;
+  --color-success-soft: #e7f6ed;
+  --color-warning: #8a5b00;
+  --color-warning-soft: #fff5e0;
+  --color-danger: #b33125;
+  --color-danger-soft: #fdecea;
+
+  /* Palet chart (dipakai T6) */
+  --chart-1: #2f5bea;
+  --chart-2: #0f9b8e;
+  --chart-3: #d97706;
+  --chart-4: #7c3aed;
+  --chart-5: #db2777;
+  --chart-6: #4b5563;
+
+  /* Jarak */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* Bentuk & bayangan */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.08);
+  --shadow-md: 0 4px 14px rgba(16, 24, 40, 0.09);
+
+  /* Tipografi */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 15px;
+  --text-lg: 18px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+
+  /* Layout */
+  --content-max: 1200px;
+}

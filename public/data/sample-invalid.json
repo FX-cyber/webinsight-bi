@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "metadata": {
+    "query": "DATA UJI VALIDASI - berisi record yang sengaja rusak untuk menguji validator (sintetis)",
+    "generated_at": "2026-10-01T09:30:00Z",
+    "record_count": 16
+  },
+  "records": [
+    {
+      "id": "INV-001",
+      "title": "Contoh Record Valid Lengkap",
+      "date": "2026-08-01",
+      "source": "contoh-news.test",
+      "entity": "Badan Data Sintetis",
+      "category": "Berita",
+      "topic": "Teknologi Hijau",
+      "location": "Kota Sampel",
+      "summary": "Data sintetis untuk menguji validator. Record ini lengkap dan seharusnya dinyatakan valid.",
+      "url": "https://contoh-news.test/uji/inv-001",
+      "retrieved_at": "2026-10-01T09:31:00Z"
+    },
+    {
+      "id": "INV-002",
+      "title": "Contoh Record Valid Minimal",
+      "source": "data-sampel.test",
+      "summary": "Data sintetis untuk menguji validator. Hanya lima field wajib, tanpa field opsional, dan seharusnya tetap valid.",
+      "url": "https://data-sampel.test/uji/inv-002"
+    },
+    {
+      "id": "INV-003",
+      "title": "Contoh Record Tanpa Summary",
+      "date": "2026-08-03",
+      "source": "kampus-fiktif.test",
+      "topic": "Pendidikan Digital",
+      "url": "https://kampus-fiktif.test/uji/inv-003"
+    },
+    {
+      "id": "INV-004",
+      "title": "Contoh Record Tanpa URL",
+      "date": "2026-08-05",
+      "source": "riset-uji.test",
+      "category": "Laporan",
+      "topic": "Pariwisata Domestik",
+      "summary": "Data sintetis. Record ini tidak memiliki field url sehingga harus ditolak sebagai invalid."
+    },
+    {
+      "id": "INV-005",
+      "title": "   ",
+      "date": "2026-08-07",
+      "source": "portal-contoh.test",
+      "category": "Pengumuman",
+      "summary": "Data sintetis. Title hanya berisi spasi sehingga setelah trim menjadi kosong dan record harus ditolak.",
+      "url": "https://portal-contoh.test/uji/inv-005"
+    },
+    {
+      "id": "INV-006",
+      "title": "Contoh Record dengan Skema URL Berbahaya",
+      "date": "2026-08-09",
+      "source": "contoh-news.test",
+      "category": "Berita",
+      "summary": "Data sintetis. URL memakai skema javascript yang tidak diizinkan sehingga record harus ditolak.",
+      "url": "javascript:alert(1)"
+    },
+    {
+      "id": "INV-007",
+      "title": "Contoh Record dengan Skema URL Tidak Didukung",
+      "date": "2026-08-11",
+      "source": "data-sampel.test",
+      "category": "Riset",
+      "summary": "Data sintetis. URL memakai skema ftp sehingga record harus ditolak.",
+      "url": "ftp://arsip-uji.test/dokumen/laporan"
+    },
+    {
+      "id": "INV-008",
+      "title": "Contoh Record dengan Tanggal Format Salah",
+      "date": "32/13/2026",
+      "source": "kampus-fiktif.test",
+      "category": "Laporan",
+      "topic": "Transportasi Kota",
+      "location": "Kabupaten Uji",
+      "summary": "Data sintetis. Tanggal tidak dapat diparse sehingga menjadi null, tetapi record tetap valid.",
+      "url": "https://kampus-fiktif.test/uji/inv-008"
+    },
+    {
+      "id": "INV-009",
+      "title": "Contoh Record dengan Tanggal Bukan Teks Tanggal",
+      "date": "bukan-tanggal",
+      "source": "riset-uji.test",
+      "topic": "Ekonomi Kreatif",
+      "summary": "Data sintetis. Nilai tanggal tidak bermakna sehingga menjadi null, tetapi record tetap valid.",
+      "url": "https://riset-uji.test/uji/inv-009",
+      "retrieved_at": "2026-10-01T09:39:00Z"
+    },
+    {
+      "id": "INV-001",
+      "title": "Contoh Record dengan ID Duplikat",
+      "date": "2026-08-15",
+      "source": "portal-contoh.test",
+      "category": "Wawancara",
+      "topic": "Teknologi Hijau",
+      "summary": "Data sintetis. ID sama dengan record pertama sehingga harus dibuang sebagai duplikat.",
+      "url": "https://portal-contoh.test/uji/inv-001-duplikat"
+    },
+    {
+      "id": "INV-010",
+      "title": "Contoh Record dengan Field Opsional Kosong",
+      "date": "2026-08-17",
+      "source": "contoh-news.test",
+      "entity": "",
+      "category": "   ",
+      "topic": null,
+      "location": "",
+      "summary": "Data sintetis. Semua field opsional kosong, hanya spasi, null, atau tidak dapat diparse sehingga seluruhnya harus dinormalkan menjadi null.",
+      "url": "https://contoh-news.test/uji/inv-010",
+      "retrieved_at": "01-10-2026"
+    },
+    {
+      "id": 123,
+      "title": "Contoh Record dengan ID Bukan String",
+      "date": "2026-08-19",
+      "source": "data-sampel.test",
+      "category": "Berita",
+      "summary": "Data sintetis. Field id berupa angka sehingga harus ditolak sebagai tipe tidak sesuai.",
+      "url": "https://data-sampel.test/uji/inv-011"
+    },
+    {
+      "id": "INV-012",
+      "title": "Contoh Record Tanpa Source",
+      "date": "2026-08-21",
+      "category": "Pengumuman",
+      "topic": "Pariwisata Domestik",
+      "summary": "Data sintetis. Record ini tidak memiliki field source sehingga harus ditolak.",
+      "url": "https://kampus-fiktif.test/uji/inv-012"
+    },
+    {
+      "id": "INV-013",
+      "title": "Contoh Record Valid dengan Field Tambahan Tak Dikenal",
+      "date": "2026-08-23",
+      "source": "riset-uji.test",
+      "entity": "Lembaga Riset Sampel",
+      "category": "Riset",
+      "topic": "Pendidikan Digital",
+      "location": "Wilayah Contoh",
+      "summary": "Data sintetis. Field di luar kontrak harus diabaikan dan record tetap valid.",
+      "url": "https://riset-uji.test/uji/inv-013",
+      "retrieved_at": "2026-10-01T09:43:00Z",
+      "skor_relevansi": 0.87,
+      "tag_tambahan": ["uji", "sintetis"]
+    },
+    "bukan sebuah objek - entri ini harus ditolak"
+  ]
+}
