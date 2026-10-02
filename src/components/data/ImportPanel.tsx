@@ -54,7 +54,7 @@ export default function ImportPanel() {
   return (
     <div className="import-panel">
       <label className="import-panel__picker">
-        <span className="filter-bar__label">Pilih file .json hasil Hermes</span>
+        <span className="filter-bar__label">Import dataset JSON yang sesuai kontrak WebInsight</span>
         <input
           className="input"
           type="file"

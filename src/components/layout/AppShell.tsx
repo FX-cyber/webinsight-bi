@@ -8,22 +8,15 @@ export default function AppShell() {
     <div className="app-shell">
       <header className="app-header">
         <div className="app-header__inner">
-          <div className="brand">
-            <span className="brand__mark" aria-hidden="true">
-              WB
-            </span>
-            <div className="brand__text">
-              <h1 className="brand__name">WebInsight Agent</h1>
-              <p className="brand__tag">Agentic Public Web Intelligence & Trend BI</p>
-            </div>
+          <div className="brand__text">
+            <h1 className="brand__name">WebInsight</h1>
+            <p className="brand__tag">Public Web Intelligence</p>
           </div>
           <SiteNav />
         </div>
       </header>
 
-      <div className="dataset-strip">
-        <DatasetStatus />
-      </div>
+      <DatasetStatus />
 
       <main className="app-main">
         <Suspense fallback={<p className="chart-empty">Memuat halaman…</p>}>
@@ -33,13 +26,10 @@ export default function AppShell() {
 
       <footer className="app-footer">
         <p>
-          Aplikasi 100% statis · seluruh pemrosesan berjalan di browser · tanpa backend, database,
-          atau API key.
+          <strong>WebInsight</strong> · Public Web Intelligence
         </p>
-        <p>
-          Data bawaan adalah <strong>data sintetis</strong> untuk keperluan pengujian dan pendidikan,
-          bukan fakta atau artikel nyata.
-        </p>
+        <p>Insight disusun dari sumber publik dan dapat ditelusuri kembali ke evidence aslinya.</p>
+        <p>Research automation dijalankan terpisah dari aplikasi web.</p>
       </footer>
     </div>
   )

@@ -1,7 +1,7 @@
 /**
  * Kontrak data WebInsight BI v1.0
  *
- * File JSON dihasilkan oleh Hermes Agent (di luar aplikasi ini) dan dibaca dari
+ * File JSON dihasilkan oleh pipeline research agent (di luar aplikasi ini) dan dibaca dari
  * public/data/web-data.json. Semua field opsional dinormalisasi menjadi `null`
  * oleh validator (T3) sehingga UI tidak pernah menangani `undefined`.
  */
@@ -31,7 +31,7 @@ export interface RawWebRecord {
 
 /** Metadata dataset setelah lolos validasi envelope. */
 export interface DatasetMetadata {
-  /** Kueri/topik yang dipakai Hermes saat ekstraksi. */
+  /** Kueri/objective yang dipakai pipeline research saat ekstraksi. */
   query: string
   /** ISO 8601 UTC, kapan file dibuat. */
   generated_at: string

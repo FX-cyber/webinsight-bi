@@ -3,7 +3,7 @@ import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import AppShell from './components/layout/AppShell'
 import { FilterProvider } from './data/FilterContext'
 import DataPage from './pages/DataPage'
-import ResearchPage from './pages/ResearchPage'
+import ExplorePage from './pages/ExplorePage'
 import SignalsPage from './pages/SignalsPage'
 import SourcesPage from './pages/SourcesPage'
 
@@ -17,11 +17,13 @@ export default function App() {
         <Routes>
           <Route element={<AppShell />}>
             <Route index element={<PulsePage />} />
-            <Route path="research" element={<ResearchPage />} />
+            <Route path="explore" element={<ExplorePage />} />
             <Route path="signals" element={<SignalsPage />} />
             <Route path="sources" element={<SourcesPage />} />
+            {/* Utility route: tidak tampil di navigasi utama. */}
             <Route path="data" element={<DataPage />} />
-            <Route path="explorer" element={<Navigate to="/research" replace />} />
+            <Route path="research" element={<Navigate to="/explore" replace />} />
+            <Route path="explorer" element={<Navigate to="/explore" replace />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

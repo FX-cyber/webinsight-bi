@@ -1,34 +1,63 @@
+import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import TimeSeriesChart from '../components/charts/TimeSeriesChart'
-import TopNBarChart from '../components/charts/TopNBarChart'
 import PageNotice from '../components/common/PageNotice'
-import FilterBar from '../components/filters/FilterBar'
-import AgentActivityPanel from '../components/trend/AgentActivityPanel'
 import TrendHero from '../components/trend/TrendHero'
 import TrendRanking from '../components/trend/TrendRanking'
 import { useDataset } from '../data/DatasetContext'
 import { useFilters } from '../data/FilterContext'
-import { formatNumberId } from '../logic/format'
-import { topNByField } from '../logic/topN'
+import { uniqueCount } from '../logic/counts'
+import { formatDateId } from '../logic/format'
 import { rankTrendTopics, topTrendTopic } from '../logic/trendView'
 
+const KEY_SIGNAL_LIMIT = 5
+
 export default function PulsePage() {
-  const { status, retryDefaultDataset, trendSummary } = useDataset()
+  const { status, retryDefaultDataset, records, trendSummary } = useDataset()
   const { filteredRecords } = useFilters()
 
+  const ranking = useMemo(() => rankTrendTopics(trendSummary), [trendSummary])
+  const top = useMemo(() => topTrendTopic(trendSummary), [trendSummary])
+
+  const topCategory = useMemo(() => {
+    if (top === null) return null
+    const counts = new Map<string, number>()
+    for (const record of records) {
+      if (record.topic !== top.topic || record.category === null) continue
+      counts.set(record.category, (counts.get(record.category) ?? 0) + 1)
+    }
+    let best: string | null = null
+    let bestCount = 0
+    for (const [category, count] of counts) {
+      if (count > bestCount) {
+        best = category
+        bestCount = count
+      }
+    }
+    return best
+  }, [records, top])
+
+  const keySignals = useMemo(() => {
+    const signals = trendSummary?.signals ?? []
+    return [...signals]
+      .sort((a, b) => b.evidence_count - a.evidence_count || (a.title < b.title ? -1 : 1))
+      .slice(0, KEY_SIGNAL_LIMIT)
+  }, [trendSummary])
+
   if (status === 'loading') {
-    return <PageNotice tone="info" title="Memuat dataset bawaan…" />
+    return <PageNotice tone="info" title="Memuat data…" />
   }
 
   if (status === 'error') {
     return (
-      <PageNotice tone="danger" title="Dataset tidak dapat dimuat">
+      <PageNotice tone="danger" title="Data tidak dapat dimuat">
         <p>
-          Periksa file <code>data/web-data.json</code> atau muat dataset lewat halaman Data.
+          Periksa file <code>data/web-data.json</code> atau muat dataset lewat route utility{' '}
+          <code>#/data</code>.
         </p>
         <p className="notice__actions">
           <button type="button" className="btn btn--primary" onClick={retryDefaultDataset}>
-            Muat ulang dataset bawaan
+            Muat ulang data
           </button>
           <Link className="btn btn--ghost" to="/data">
             Import dataset manual
@@ -38,69 +67,68 @@ export default function PulsePage() {
     )
   }
 
-  const ranking = rankTrendTopics(trendSummary)
-  const top = topTrendTopic(trendSummary)
-  const fallbackTopics = topNByField(filteredRecords, 'topic')
+  const sourceCount = uniqueCount(records.map((record) => record.source))
+  const topicCount = trendSummary?.topics.length ?? uniqueCount(records.map((record) => record.topic))
+  const updated = trendSummary?.generated_at ?? null
 
   return (
     <section className="page">
       <header className="page__head">
         <h2 className="page__title">Pulse</h2>
-        <p className="page__lead">
-          Pantauan tren dari sumber publik yang dipantau. Skor, arah, dan signal berasal dari run
-          tren terakhir; aktivitas mention dihitung dari record terfilter.
-        </p>
+        <p className="page__lead">Perkembangan yang paling menonjol dari sumber publik terbaru.</p>
       </header>
 
       {top === null ? (
         <p className="notice notice--inline">
-          Trend intelligence belum tersedia. Pulse tetap menampilkan aktivitas record yang dimuat.
+          Trend intelligence belum tersedia pada data yang dimuat.
         </p>
       ) : (
-        <TrendHero topic={top} />
+        <TrendHero topic={top} category={topCategory} />
       )}
 
-      <div className="pulse-grid">
-        {ranking.length === 0 ? (
-          <section className="card trend-ranking">
-            <h3 className="card__title">Top Topics (dari record aktif)</h3>
-            <ol className="trend-ranking__list">
-              {fallbackTopics.map((entry, index) => (
-                <li className="trend-ranking__item" key={entry.label}>
-                  <span className="trend-ranking__rank">{String(index + 1).padStart(2, '0')}</span>
-                  <span className="trend-ranking__body">
-                    <span className="trend-ranking__topic">{entry.label}</span>
-                    <span className="trend-ranking__meta">{formatNumberId(entry.count)} record</span>
-                  </span>
-                </li>
-              ))}
-            </ol>
-          </section>
-        ) : (
-          <TrendRanking topics={ranking} />
-        )}
-        <AgentActivityPanel title="Agent Activity" />
-      </div>
+      <TrendRanking topics={ranking} />
 
-      <FilterBar />
+      <TimeSeriesChart records={filteredRecords} title="Mentions Over Time" />
 
-      <div className="chart-grid">
-        <div className="chart-grid__wide">
-          <TimeSeriesChart records={filteredRecords} title="Mentions Over Time" />
+      <section>
+        <div className="chart-card__head">
+          <h3 className="section-title">Key Signals</h3>
+          <p className="section-subtitle">
+            Klaim dengan evidence terkuat ·{' '}
+            <Link to="/signals">lihat semua signal</Link>
+          </p>
         </div>
-        <TopNBarChart
-          title="Top Topics"
-          field="topic"
-          color="var(--chart-2)"
-          records={filteredRecords}
-        />
-        <TopNBarChart
-          title="Most Active Entities"
-          field="entity"
-          color="var(--chart-4)"
-          records={filteredRecords}
-        />
-      </div>
+        {keySignals.length === 0 ? (
+          <p className="meta-line">Belum ada signal pada data yang dimuat.</p>
+        ) : (
+          <ul className="key-signals">
+            {keySignals.map((signal) => (
+              <li className="key-signals__item" key={signal.id}>
+                <span
+                  className={
+                    signal.status === 'cross-source'
+                      ? 'signal-card__status signal-card__status--cross'
+                      : 'signal-card__status'
+                  }
+                >
+                  {signal.status === 'cross-source' ? 'Cross-source' : 'Single-source'}
+                </span>
+                <span className="key-signals__title">
+                  <Link to="/signals">{signal.title}</Link>
+                </span>
+                <span className="meta-line">
+                  {signal.evidence_count} evidence · {signal.sources.length} sources
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <p className="meta-line">
+        {records.length} records · {sourceCount} sources · {topicCount} topics · Updated{' '}
+        {updated === null ? '—' : formatDateId(updated.slice(0, 10))}
+      </p>
     </section>
   )
 }

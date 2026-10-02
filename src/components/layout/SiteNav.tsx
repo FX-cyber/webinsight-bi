@@ -8,10 +8,9 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { to: '/', label: 'Pulse', end: true },
-  { to: '/research', label: 'Research' },
+  { to: '/explore', label: 'Explore' },
   { to: '/signals', label: 'Signals' },
   { to: '/sources', label: 'Sources' },
-  { to: '/data', label: 'Data' },
 ]
 
 export default function SiteNav() {

@@ -10,7 +10,7 @@ import type {
 /**
  * Validator & normalizer kontrak data WebInsight BI v1.
  *
- * Satu-satunya gerbang masuk data: dataset bawaan maupun file impor Hermes
+ * Satu-satunya gerbang masuk data: dataset bawaan maupun file impor
  * harus melewati `validateDataset` yang sama. Tidak ada network request;
  * URL hanya diperiksa formatnya.
  */

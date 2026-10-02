@@ -8,21 +8,21 @@ interface SignalCardProps {
 }
 
 /**
- * Kartu signal. Badge cross-source/single-source diambil apa adanya dari
- * status data (P1), tidak dihitung ulang di UI.
+ * Kartu signal editorial. Status cross-source/single-source ditampilkan sebagai
+ * label kecil berbasis data (P1), bukan badge warna mencolok.
  */
 export default function SignalCard({ signal, relatedRecords }: SignalCardProps) {
   const [open, setOpen] = useState(false)
+  const crossSource = signal.status === 'cross-source'
 
   return (
     <article className="signal-card">
       <header className="signal-card__head">
         <span
-          className={
-            signal.status === 'cross-source' ? 'badge badge--success' : 'badge badge--warning'
-          }
+          className={crossSource ? 'signal-card__status signal-card__status--cross' : 'signal-card__status'}
         >
-          {signal.status === 'cross-source' ? 'cross-source' : 'single-source'}
+          {crossSource ? 'Cross-source' : 'Single-source'} · {signal.sources.length} source
+          {signal.sources.length === 1 ? '' : 's'}
         </span>
         <span className="signal-card__topic">{signal.topic}</span>
       </header>
@@ -30,7 +30,7 @@ export default function SignalCard({ signal, relatedRecords }: SignalCardProps) 
       <h3 className="signal-card__title">{signal.title}</h3>
 
       <p className="signal-card__meta">
-        {formatNumberId(signal.evidence_count)} evidence · {signal.sources.length} source
+        {formatNumberId(signal.evidence_count)} evidence
         {signal.entity === null ? '' : ` · ${signal.entity}`}
       </p>
       <p className="signal-card__sources">{signal.sources.join(' · ')}</p>
@@ -47,7 +47,7 @@ export default function SignalCard({ signal, relatedRecords }: SignalCardProps) 
       {open ? (
         <ul className="signal-card__records">
           {relatedRecords.length === 0 ? (
-            <li className="facet__empty">record terkait tidak ditemukan pada dataset aktif</li>
+            <li className="meta-line">record terkait tidak ditemukan pada dataset aktif</li>
           ) : (
             relatedRecords.map((record) => (
               <li key={record.id}>

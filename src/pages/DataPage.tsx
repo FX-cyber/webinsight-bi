@@ -66,8 +66,7 @@ export default function DataPage() {
       <header className="page__head">
         <h2 className="page__title">Schema / Import Data</h2>
         <p className="page__lead">
-          Hermes menghasilkan file JSON mengikuti kontrak ini. WebInsight BI memvalidasi file
-          sebelum digunakan.
+          Dataset JSON mengikuti kontrak ini. WebInsight memvalidasi file sebelum digunakan.
         </p>
       </header>
 
@@ -114,7 +113,7 @@ export default function DataPage() {
       </div>
 
       <div className="card">
-        <h3 className="card__title">B. Import Hermes Data</h3>
+        <h3 className="card__title">B. Import Dataset</h3>
         <ImportPanel />
       </div>
     </section>

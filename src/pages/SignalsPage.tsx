@@ -31,7 +31,7 @@ export default function SignalsPage() {
             {recent.map((record) => (
               <article className="signal-card" key={record.id}>
                 <header className="signal-card__head">
-                  <span className="badge">recent</span>
+                  <span className="signal-card__status">Recent</span>
                   <span className="signal-card__topic">{record.topic ?? 'tanpa topik'}</span>
                 </header>
                 <h3 className="signal-card__title">{record.title}</h3>
