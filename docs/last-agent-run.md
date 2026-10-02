@@ -1,158 +1,170 @@
 # Last Agent Run — observable log
 
-Run ID: `run-automated-2026-10-01-1642z` · Mode: automated · Generated: 2026-10-01T17:02:06Z
+Run ID: `run-automated-2026-10-02-1534z` · Mode: automated · Generated: 2026-10-02T15:34:03Z
 
 ## Objective
 Temukan perkembangan yang sedang memperoleh perhatian di public web Indonesia lintas domain
 (Technology & Digital, Business & Economy, Jobs & Career, Education, Tourism, Agriculture & Food,
 Industry, Public Services, Environment) dalam 48 jam terakhir, dengan recent window 24 jam.
 
-- Start run: 2026-10-01T16:42:05Z (2026-10-01 23:42 WIB)
-- End run (riset + validasi selesai): 2026-10-01T17:13:09Z
-- Window 48 jam: 2026-09-29T16:42Z s/d 2026-10-01T16:42Z
-- Recent window 24 jam: record bertanggal 2026-10-01 (tanggal run, UTC)
-- Aturan window yang dipakai: record bertanggal 2026-09-30 dan 2026-10-01 diterima; record
-  bertanggal 2026-09-29 atau lebih lama dibuang karena seluruh hari itu berada sebelum
-  batas awal window.
+- Start run: 2026-10-02T14:03:14Z (2026-10-02 21:03 WIB)
+- End run (riset + validasi selesai): 2026-10-02T15:40Z
+- Window 48 jam: 2026-09-30T14:03Z s/d 2026-10-02T14:03Z (dihitung dari waktu run aktual)
+- Recent window 24 jam: record bertanggal 2026-10-02 (tanggal run, UTC)
+- Aturan window yang dipakai: record bertanggal 2026-09-30, 2026-10-01, dan 2026-10-02 diterima;
+  record bertanggal 2026-09-29 atau lebih lama dibuang. Seluruh record final ternyata bertanggal
+  2026-10-01 atau 2026-10-02.
+- Catatan branch: repo saat run dimulai berada di `main` (3 commit di depan
+  `feature/automated-trends`). Run dipindah ke `feature/automated-trends` sebelum riset;
+  `public/data` dan `docs` identik di kedua branch, jadi baseline tidak berubah.
 
-## Search queries — discovery (35)
-1. Indonesia ekonomi bisnis berita 1 Oktober 2026
-2. berita teknologi digital Indonesia 30 September 2026 peluncuran
-3. rekrutmen lowongan kerja CPNS Indonesia Oktober 2026 pengumuman
-4. berita pendidikan Indonesia kebijakan sekolah 1 Oktober 2026
-5. pariwisata Indonesia kunjungan wisatawan berita 1 Oktober 2026
-6. harga beras pangan pertanian Indonesia 1 Oktober 2026 Bulog
-7. kebijakan berlaku mulai 1 Oktober 2026 Indonesia pemerintah
-8. makan bergizi gratis MBG berita 1 Oktober 2026
-9. IHSG rupiah 1 Oktober 2026 pasar saham ditutup
-10. upah minimum 2027 buruh PHK berita 30 September 2026
-11. Komdigi siaran pers 1 Oktober 2026 ruang digital
-12. berita pariwisata Bali wisatawan Nusantara 30 September 2026
-13. inflasi September 2026 BPS harga pangan diumumkan 1 Oktober
-14. buruh aksi unjuk rasa upah minimum 2027 Oktober 2026 Kemenaker
-15. sekolah rakyat pendidikan berita 30 September 2026 kementerian
-16. berita pendidikan Indonesia 1 Oktober 2026 siswa guru kampus
-17. PHK industri perusahaan Indonesia berita 30 September 2026
-18. peresmian pabrik investasi hilirisasi Indonesia 1 Oktober 2026
-19. "1 Oktober 2026" berita Indonesia hari ini nasional
-20. RUU Ketenagakerjaan DPR RI Oktober 2026 pembahasan buruh
-21. program magang nasional Kemenaker 2026 fresh graduate dibuka
-22. guru honorer PPPK pengumuman Oktober 2026 formasi sekolah
-23. energi terbarukan emisi karbon Indonesia 30 September 2026
-24. kebocoran data pribadi Indonesia pelindungan data 30 September 2026
-25. pendidikan Indonesia berita 30 September 2026 kampus sekolah mahasiswa (dibatasi domain news + kementerian)
-26. berita teknologi Indonesia 1 Oktober 2026 startup pendanaan regulasi digital
-27. harga beras SPHP Bulog operasi pasar Oktober 2026 pangan
-28. berita ketenagakerjaan pekerja Indonesia 1 Oktober 2026 Kemenaker upah
-29. tes kemampuan akademik TKA 2026 siswa SMA pendaftaran jadwal
-30. keamanan siber Indonesia BSSN serangan data 1 Oktober 2026
-31. Bapanas Kementan pangan harga 1 Oktober 2026 pernyataan
-32. antaranews pendidikan sekolah siswa 1 Oktober 2026
-33. beasiswa mahasiswa Indonesia dibuka Oktober 2026 pendaftaran resmi
-34. sekolah rakyat tahap tiga Oktober 2026 Kemensos siswa pendidikan berita
-35. berita pertanian petani Indonesia 1 Oktober 2026 panen komoditas
+## Search queries — discovery (20)
+1. Indonesia teknologi digital berita 2 Oktober 2026
+2. Indonesia ekonomi bisnis perkembangan 2 Oktober 2026
+3. Indonesia ketenagakerjaan upah minimum lowongan kerja Oktober 2026
+4. Indonesia pendidikan sekolah kebijakan berita Oktober 2026
+5. Indonesia pariwisata kunjungan wisatawan Oktober 2026
+6. Indonesia pertanian pangan harga beras Bulog 2 Oktober 2026
+7. Indonesia industri manufaktur hilirisasi smelter 2 Oktober 2026
+8. BMKG peringatan dini cuaca hujan lebat 2 Oktober 2026
+9. berita Indonesia hari ini 2 Oktober 2026 ekonomi pemerintah
+10. Indonesia layanan publik kebijakan baru mulai 1 Oktober 2026
+11. Indonesia kecerdasan buatan startup digital teknologi 2 Oktober 2026
+12. rekrutmen CPNS PPPK lowongan kerja Oktober 2026 pengumuman
+13. IHSG rupiah Bank Indonesia pasar saham 2 Oktober 2026
+14. sekolah guru siswa program pendidikan 2 Oktober 2026 Indonesia
+15. makan bergizi gratis MBG BGN 2 Oktober 2026
+16. PHK pemutusan hubungan kerja buruh upah minimum 2027 Oktober 2026
+17. Sekolah Rakyat siswa asrama Kemensos Oktober 2026
+18. beasiswa LPDP kampus perguruan tinggi berita 2 Oktober 2026
+19. pariwisata destinasi wisata Bali penerbangan wisatawan 2 Oktober 2026
+20. Indonesia ekspor impor perdagangan BPS rilis 2 Oktober 2026
 
-## Search queries — refinement (24)
-1. BEI short selling dimulai 1 Oktober 2026 IDX
-2. WhatsApp kenakan biaya layanan bisnis mulai 1 Oktober 2026 Indonesia
-3. WhatsApp Business berbayar 1 Oktober 2026 pelaku usaha UMKM Indonesia
-4. PMI manufaktur Indonesia September 2026 ekspansi
-5. Bulog luncurkan "Beras Kita" Oktober 2026
-6. B50 biodiesel resmi berlaku 1 Oktober 2026 Pertamina
-7. B50 solar biodiesel SPBU 1 Oktober 2026 antaranews detik pemberlakuan
-8. B50 biodiesel 1 Oktober 2026 Pertamina SPBU seluruh Indonesia berita hari ini
-9. solar B50 mulai dijual SPBU hari ini 1 Oktober 2026 Pertamina ESDM
-10. BGN 480 dapur MBG Oktober 2026 wilayah terpencil prioritas
-11. BGN 480 SPPG aktif 2 Oktober 2026 wilayah 3T antaranews
-12. BPS kunjungan wisatawan mancanegara Agustus 2026 rilis
-13. antaranews kunjungan wisatawan mancanegara Agustus 2026 naik BPS
-14. BPS inflasi September 2026 3,28 persen rilis resmi 1 Oktober
-15. antaranews inflasi September 2026 BPS 3,28 persen 1 Oktober
-16. pajak e-commerce marketplace pungut PPh 22 1 Oktober 2026 DJP
-17. empat marketplace ditunjuk pemungut PPh 22 Oktober 2026 Tokopedia Shopee
-18. nilai tukar petani NTP September 2026 BPS rilis 1 Oktober
-19. antaranews NTP nilai tukar petani September 2026 naik 1,49 persen BPS
-20. berita teknologi digital Indonesia 1 Oktober 2026 pusat data investasi
-21. peringatan dini cuaca 1-2 Oktober 2026 siaga Aceh Sumatera Utara hujan lebat
-22. BMKG peringatan dini hujan lebat siaga 1 Oktober 2026 antaranews
-23. BSU triwulan IV 2026 cair 13,3 juta pekerja Rp900 ribu antaranews
-24. RUU Pelindungan Ketenagakerjaan disahkan 8 Oktober 2026 buruh — **diblokir classifier**
-    (query dianggap mengarah ke tanggal di luar window; tidak dieksekusi, diganti query
-    discovery nomor 20 dan 28 yang tetap dalam window)
+## Search queries — refinement (14)
+1. Indonesia digital teknologi berita 2 Oktober 2026 Komdigi data center kedaulatan
+2. Kemendikdasmen berita 2 Oktober 2026 siswa sekolah pengumuman
+3. BPS neraca perdagangan surplus Agustus 2026 ekspor 26,61 miliar impor
+4. BPS potensi produksi beras September November 2026 7,06 juta ton turun
+5. STARLUX Airlines penerbangan perdana Taipei Denpasar Bali 1 Oktober 2026
+6. insentif dapur MBG Rp2.000 per porsi mulai 5 Oktober 2026 BGN
+7. demo buruh Oktober 2026 tuntutan upah minimum 2027 naik 8,5 persen KSPI — **0 hasil**
+8. IHSG ditutup 2 Oktober 2026 level poin perdagangan
+9. Kemenko Hilirisasi Bahlil tumpang tindih kewenangan Oktober 2026
+10. BMKG peringatan dini cuaca 2-3 Oktober 2026 siaga provinsi hujan lebat
+11. aksi buruh tuntut kenaikan upah 2027 FSPMI KSPI Oktober 2026
+12. DJKI komersialisasi paten dalam negeri forum bisnis paten Oktober 2026
+13. "2 Oktober 2026" buruh aksi demo upah 2027 Jakarta
+14. Indonesia teknologi digital berita 1 Oktober 2026 Komdigi AI regulasi platform
 
-Total: 59 query (58 dieksekusi, 1 diblokir).
+Total: 34 query (semua dieksekusi, tidak ada yang diblokir).
 
 ## Source categories inspected
-- Government/institutional: hortikultura.pertanian.go.id (Ditjen Hortikultura Kementan);
-  bps.go.id dan bmkg.go.id (gagal dibuka, lihat failures)
-- Reputable news: kontan.co.id, idxchannel.com, cnbcindonesia.com, kompas.tv, antaranews.com
-  (portal regional Sultra/Jogja/Kepri), cnnindonesia.com, detik.com, disway.id, validnews.id,
-  investortrust.id, voi.id
-- Diakses tapi dibuang: edukasi.sindonews.com (out-of-window), industri.kontan.co.id (out-of-window)
-- Dibuang tanpa ekstraksi: social post (Instagram/Facebook/X/Threads/LinkedIn), YouTube,
-  halaman evergreen/aggregator lowongan kerja, blog kampus, dan artikel Juli–September 2026
+- Official/press release: `bps.go.id` (Berita Resmi Statistik ekspor-impor Agustus 2026, dibuka
+  via browser setelah WebFetch kena 403)
+- Government/institutional: `presidenri.go.id`, `ekon.go.id`, `kemenpar.go.id`, `dgip.go.id`
+  (semuanya gagal dibuka, lihat failures)
+- Reputable news: `rri.co.id` (LPP RRI), `kompas.id`, `kompas.tv`, `kontan.co.id`
+  (nasional + industri), `cnbcindonesia.com`, `antaranews.com` (nasional + biro Jawa Timur),
+  `metrotvnews.com`, `merahputih.com`, `tvrinews.com` (ekonomi + nasional),
+  `wartaekonomi.co.id`
+- Publisher kecil (dipakai hanya sebagai evidence pendukung, bukan sumber tunggal):
+  `rentak.id`, `voiceindonesia.co`
+- Diakses tapi dibuang: `infopublik.id` (artikel Komdigi regulasi AI bertanggal 23 Mei 2026,
+  out-of-window), `cnbcindonesia.com` artikel Anthropic buka kantor di Singapura (event tidak
+  spesifik Indonesia, relevansi lemah)
+- Dibuang tanpa ekstraksi: social post (Instagram/Facebook/X/Threads), YouTube, agregator
+  lowongan kerja evergreen, dan artikel Juli–September 2026
 
 ## Pages opened / verified
-- Percobaan WebFetch: 34 (1 halaman dibuka dua kali untuk memperdalam ekstraksi)
-- Halaman unik berhasil dibuka: 21 · Gagal dibuka: 13
-- Dipakai sebagai evidence: 19 · Dibuang out-of-window: 2
-  (`industri.kontan.co.id` B50 tanggal 2026-09-28; `edukasi.sindonews.com` seleksi guru SILN
-  tanggal 2026-09-29)
-- Publisher unik yang berhasil dibuka (`run.sources_visited`): 13
-- Duplicate URL / syndication dibuang: 0 (tidak ada URL kembar; portal regional ANTARA
-  memuat berita berbeda, bukan salinan satu sama lain)
+- Percobaan WebFetch: 33 · Navigasi browser: 7
+- Halaman unik berhasil dibuka: 19 · URL yang tidak pernah berhasil dibuka: 9
+- Dipakai sebagai evidence: 17 · Dibuang setelah dibuka: 2 (relevansi lemah 1, out-of-window 1)
+- Publisher unik yang berhasil dibuka (`run.sources_visited`): 14
+  (13 publisher pada record final + `infopublik.id` yang dibuka lalu dibuang)
+- Duplicate URL / syndication dibuang: 0 — tidak ada URL kembar. `antaranews.com` dan
+  `jatim.antaranews.com` diperlakukan sebagai satu publisher (ANTARA) tetapi memuat dua event
+  berbeda; `kontan.co.id` nasional dan industri likewise; `tvrinews.com` ekonomi dan nasional
+  likewise; `rri.co.id` memuat dua laporan berbeda (sesi I dan penutupan) untuk hari bursa yang sama.
+- Batas 4 publisher per event dipatuhi: event perdagangan Agustus memakai 3 publisher
+  (`bps.go.id`, `cnbcindonesia.com`, `merahputih.com`); `beritasatu.com` dan
+  `ekonomi.bisnis.com` tidak dipakai agar tidak melewati kebutuhan verifikasi.
 
 ## Candidate selection
-- Kandidat perkembangan teridentifikasi saat discovery: 22
-- Dipilih untuk deep research dan menjadi signal: 10
-- Dibuang (12): BEI short selling (liputan in-window tidak ditemukan), WhatsApp Business
-  berbayar (liputan 2026-09-28/29, out-of-window), PPh 22 empat marketplace (event Juli 2026,
-  artikel in-window gagal dibuka), RUU Pelindungan Ketenagakerjaan (2026-09-29 20:30 WIB,
-  di luar window), rebranding "Beras Kita" (2026-09-07), seleksi guru SILN (2026-09-29),
-  IHSG/sektor saham 1 Oktober (fetch gagal), tambahan anggaran BPJS Kesehatan Rp20 T
-  (2026-09-28), tenggat pendaftaran PSE Komdigi (2026-09-28), tuntutan upah minimum 2027
-  (2026-09-11/17), data PHK 53.490 pekerja (±2026-09-27), Education/TKA/beasiswa/magang
-  (tidak ada perkembangan in-window dari publisher kredibel)
-- Domain Education sengaja dibiarkan kosong: tidak ada perkembangan dalam window yang
-  lolos prioritas sumber. Tidak ada tren yang dikarang untuk mengisi domain.
+- Kandidat perkembangan teridentifikasi saat discovery: 24
+- Dipilih untuk deep research dan menjadi signal: 9
+- Dibuang (15): harga beras turun Rp500/kg (`news.majalahhortus.com`, fetch gagal),
+  stok beras melimpah harga menanjak (`tangselpos.id`, tidak diverifikasi), rilis BPS kunjungan
+  wisman Agustus 2026 (sudah jadi signal pada run sebelumnya, tidak ada perkembangan baru),
+  BGN 480 dapur SPPG wilayah 3T (`nasional.kontan.co.id` ±2026-09-30, sudah jadi signal run
+  sebelumnya), Pavilion Wonderful Indonesia di Tourism Expo Japan 2026 (`kemenpar.go.id`
+  fetch gagal), strategi pemerintah akselerasi pertumbuhan ekonomi (`ekon.go.id` fetch gagal),
+  komersialisasi paten DJKI (`dgip.go.id` body kosong), pelantikan Menko Hilirisasi
+  (`presidenri.go.id` 403), BMKG 2 Oktober (`kompas.com` 404), BMKG Jabodetabek
+  (`megapolitan.kompas.com` 404), insentif SPPG (`metrotvnews.com` fetch gagal),
+  produksi beras (`ekonomi.bisnis.com` 403), digitalisasi 470 layanan publik Kemenkum
+  (liputan kredibel bertanggal ±2026-09-27, out-of-window), UMK Surabaya 2027 / demo DPRD
+  Jatim (`surabaya.tribunnews.com` tidak diverifikasi), Education & Jobs formal
+  (CPNS/PPPK, Sekolah Rakyat, LPDP, TKA — tidak ada perkembangan in-window dari publisher kredibel)
+- Domain **Technology & Digital** dan **Education** sengaja dibiarkan kosong: tidak ada
+  perkembangan spesifik Indonesia dalam window 48 jam yang lolos prioritas sumber dan bisa
+  diverifikasi. Tidak ada tren yang dikarang untuk mengisi domain.
 
-## Failures (13, dicatat di `run.failures`, tidak menggagalkan run)
-bps.go.id (403 rilis inflasi), money.kompas.com (404 inflasi), kompas.com (404 BMKG),
-money.kompas.com (404 BSU), ekonomi.bisnis.com (403), teknologi.bisnis.com (403 data center BDx),
-metrotvnews.com (fetch gagal PPh 22), infobanknews.com (fetch gagal wisman),
-databoks.katadata.co.id (fetch gagal sektor saham), nasional.kontan.co.id (fetch gagal BGN),
-bmkg.go.id (fetch gagal prakiraan sepekan), aceh.tribunnews.com (403 siaga hujan Aceh),
-m.antaranews.com (fetch gagal versi AMP; berhasil pada URL non-AMP)
+## Failures (16, dicatat di `run.failures`, tidak menggagalkan run)
+`bps.go.id` (403 via WebFetch, berhasil via browser), `presidenri.go.id` (403),
+`ekonomi.bisnis.com` (403), `kompas.com` (404), `megapolitan.kompas.com` (404),
+`kemenpar.go.id` (fetch gagal), `ekon.go.id` (fetch gagal), `dgip.go.id` (body 0 karakter),
+`news.majalahhortus.com` (fetch gagal), `metrotvnews.com` artikel insentif SPPG (fetch gagal;
+artikel cuaca dari publisher yang sama berhasil), `rri.co.id` (fetch gagal via WebFetch, berhasil
+via browser), `nasional.tvrinews.com` + `ekonomi.tvrinews.com` (fetch gagal via WebFetch, berhasil
+via browser), `infopublik.id` (out-of-window), `cnbcindonesia.com` artikel Anthropic (relevansi
+lemah), `aceh.tribunnews.com` + `surabaya.tribunnews.com` (tidak diverifikasi), serta catatan
+dua domain yang tidak terisi.
 
 ## Extraction result
-- Final WebRecord: 19 (WEB-001 s/d WEB-019) · pipeline `fetched 21 → duplicates 0 → invalid 2 → final 19`
-- Categories (8): Industry, Business & Economy, Tourism, Public Services, Jobs & Career,
-  Environment, Agriculture & Food, Technology & Digital
-- Topics: 9 · Signals: 10 (cross-source 7, single-source 3)
-- Record bertanggal 2026-10-01 (recent window 24 jam): 15 · bertanggal 2026-09-30: 4
-- Publisher unik pada record final: 12
-- Topik teratas: September Inflation & Food Prices 67,6 · Foreign Tourist Arrivals Growth 67,6 ·
-  Manufacturing PMI Expansion 64,0 · Wage Subsidy (BSU) Q4 Disbursement 64,0 ·
-  Farmer Terms of Trade (NTP) Improvement 64,0
-- Baseline: `trend-summary.json` sebelumnya (`run-interactive-2026-10-01`) berisi 6 topik
-  bertema AI; 0 topik beririsan dengan run ini sehingga seluruh topik berstatus baru
-  (`previous_trend_score: null`, `direction: "flat"`). Tidak ada arah naik/turun yang diklaim.
+- Final WebRecord: 17 (WEB-001 s/d WEB-017) · pipeline `fetched 19 → duplicates 0 → invalid 2 → final 17`
+- Categories (7): Business & Economy (5), Agriculture & Food (3), Public Services (2),
+  Industry (2), Environment (2), Jobs & Career (2), Tourism (1)
+- Topics: 9 · Signals: 9 (cross-source 6, single-source 3)
+- Record bertanggal 2026-10-02 (recent window 24 jam): 7 · bertanggal 2026-10-01: 10
+- Publisher unik pada record final: 13
+- Topik teratas: SPHP Rice Market Operation 58,8 · Taipei-Bali Direct Flight Connectivity 58,8 ·
+  Stock Market (IHSG) Movement 54,0 · Rice Production Projection Decline 49,0 ·
+  Downstreaming Coordinating Ministry Authority Overlap 49,0 ·
+  2027 Minimum Wage Demand Protests 49,0
+- Koreksi data yang diverifikasi silang: rilis resmi `bps.go.id` menegaskan US$7,25 miliar adalah
+  surplus kumulatif Januari-Agustus 2026, sedangkan surplus bulanan Agustus 2026 sebesar
+  US$3,55 miliar (ekspor US$26,61 miliar dikurangi impor US$23,06 miliar). Beberapa judul media
+  menyebut angka kumulatif seolah angka bulanan, jadi ringkasan record memisahkan keduanya.
+- Arah IHSG: artikel `rri.co.id` memuat badan berita yang kontradiktif ("ditutup menguat" pada
+  judul tetapi "turun 27,39 poin" pada isi). Arah dipastikan dari aritmetika terhadap penutupan
+  sebelumnya 6.009,50 (6.036,89 − 6.009,50 = +27,39 = +0,46 persen), sehingga ringkasan
+  menyatakan indeks bergerak naik 0,46 persen.
+- Baseline: `trend-summary.json` sebelumnya (`run-automated-2026-10-01-1642z`) berisi 9 topik;
+  1 topik beririsan dengan run ini — **Hydrometeorological Weather Warning**
+  (previous 34,0 → sekarang 34,0, selisih 0 → `direction: "flat"`). Delapan topik lain berstatus
+  baru (`previous_trend_score: null`, `direction: "flat"`). Tidak ada arah naik/turun yang diklaim
+  tanpa dasar.
 
 ## Validation
-- Validator kontrak (`src/contract/validate.ts`): 19/19 valid, 0 invalid, 0 duplikat,
+- Validator kontrak (`src/contract/validate.ts`): 17/17 valid, 0 invalid, 0 duplikat,
   0 tanggal invalid, 0 issue, `metadata.record_count` cocok
 - Parser trend (`src/contract/trend.ts`): `parseTrendSummary` mengembalikan objek valid,
   `run.mode = "automated"`, `window_hours 48`, `recent_window_hours 24`
-- Gate tambahan (skrip `tmp/validate-candidate.mjs`): id unik + format `WEB-xxx`, url unik
-  + skema http/https, date dari halaman dan di dalam window, seluruh `signal.record_ids` ada,
+- Gate tambahan (skrip `tmp/validate-candidate.mjs`, dijalankan SEBELUM promosi): id unik +
+  format `WEB-xxx`, url unik + skema http/https, tidak ada URL daur ulang dari dataset produksi
+  sebelumnya (17/17 baru), date dari halaman dan di dalam window, seluruh `signal.record_ids` ada,
   `sources` signal = source record pendukungnya, cross-source hanya bila >= 2 publisher,
-  `evidence_count` = jumlah record, `trend_score` dihitung ulang dari formula dan cocok,
-  arah/previous konsisten dengan baseline, aritmetika pipeline konsisten — **PASS**
+  single-source bila < 2, `evidence_count` = jumlah record, topic signal = topic record,
+  `trend_score` dihitung ulang dari formula dan cocok, previous/direction konsisten dengan
+  baseline, aritmetika pipeline konsisten, `sources_visited` >= publisher unik — **PASS**
+- Verifikasi ulang setelah promosi ke `public/data`: `validateDataset` dan `parseTrendSummary`
+  keduanya lolos pada file yang sudah dipublikasikan
 - `npm run test`: 129 passed (13 file) · `npm run typecheck`: lolos · `npm run build`: sukses
-  (dijalankan ulang setelah candidate dipromosikan ke `public/data`)
+  (dijalankan sebelum dan sesudah candidate dipromosikan ke `public/data`)
 
-## Final status
+## Commit result
 SUCCESS — candidate dipromosikan ke `public/data/web-data.json` dan
 `public/data/trend-summary.json` setelah seluruh gate lolos.
 Commit: `chore(data): update automated trend intelligence` pada branch
 `feature/automated-trends` (hash lihat `git log`), hanya berisi dua file data dan log ini.
+Push hanya ke `origin feature/automated-trends`.
