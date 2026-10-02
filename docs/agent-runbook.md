@@ -67,3 +67,18 @@ objective, search queries yang dipakai (termasuk refinement), kategori sumber ya
 diperiksa, jumlah halaman dibuka, jumlah relevan, duplikat dibuang, record final,
 signals cross-source/single-source, hasil validasi, dan status akhir.
 Tidak menyimpan chain-of-thought atau reasoning internal.
+
+## Runtime & keterbatasan automation
+
+- Qoder Automation di environment ini berjalan melalui **runtime lokal (desktop)**, bukan
+  layanan cloud permanen. Scheduled run hanya terjadi bila: komputer menyala, runtime
+  Qoder aktif, dan koneksi internet tersedia. Run yang jatuh saat mesin mati akan
+  terlewat tanpa jaminan catch-up.
+- Permission mode automation: **Auto Approval** (least privilege yang masih memungkinkan
+  run mandiri tanpa interaksi).
+- Sampai approval merge, commit automation dibatasi pada tiga file
+  (`public/data/web-data.json`, `public/data/trend-summary.json`, `docs/last-agent-run.md`)
+  dan push hanya ke `origin feature/automated-trends`.
+- **Meaningful-change guard:** commit hanya dilakukan bila record, topic, score, direction,
+  signal, source/evidence, atau pipeline quality berubah secara substantif. Perubahan
+  `generated_at`/run-id/timestamp saja berarti NO MEANINGFUL CHANGE dan tidak di-commit.
