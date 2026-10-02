@@ -13,8 +13,8 @@ export default function AppShell() {
               WB
             </span>
             <div className="brand__text">
-              <h1 className="brand__name">WebInsight BI</h1>
-              <p className="brand__tag">Public Web Intelligence Dashboard</p>
+              <h1 className="brand__name">WebInsight Agent</h1>
+              <p className="brand__tag">Agentic Public Web Intelligence & Trend BI</p>
             </div>
           </div>
           <SiteNav />

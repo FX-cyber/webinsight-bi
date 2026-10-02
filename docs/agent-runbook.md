@@ -82,3 +82,7 @@ Tidak menyimpan chain-of-thought atau reasoning internal.
 - **Meaningful-change guard:** commit hanya dilakukan bila record, topic, score, direction,
   signal, source/evidence, atau pipeline quality berubah secara substantif. Perubahan
   `generated_at`/run-id/timestamp saja berarti NO MEANINGFUL CHANGE dan tidak di-commit.
+- **Status verifikasi automation:** satu *manual automation run* telah terbukti end-to-end
+  (research, staging, gate, promote, commit, push ke branch feature). *Scheduled recurring
+  soak test tidak diselesaikan*, sehingga eksekusi terjadwal berulang berstatus kemampuan
+  opsional operasional yang belum diverifikasi penuh.
