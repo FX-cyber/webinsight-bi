@@ -1,31 +1,44 @@
 :root {
-  /* Warna dasar — netral, restrained */
-  --color-bg: #fafaf9;
-  --color-surface: #ffffff;
-  --color-surface-alt: #f5f5f4;
-  --color-border: #e7e5e4;
-  --color-border-strong: #d6d3d1;
-  --color-text: #1c1917;
-  --color-text-muted: #57534e;
+  /* Canvas periwinkle seperti referensi soft-UI */
+  --color-bg: #c3cfee;
+  --color-surface: rgba(255, 255, 255, 0.85);
+  --color-surface-alt: rgba(255, 255, 255, 0.55);
+  --color-border: rgba(93, 108, 150, 0.16);
+  --color-border-strong: #9aa7c7;
+  --color-text: #232f42;
+  --color-text-muted: #5a6784;
 
-  /* Satu aksen utama yang restrained */
-  --color-primary: #1e40af;
-  --color-primary-hover: #1e3a8a;
-  --color-primary-soft: #eef2ff;
-  --color-success: #15803d;
-  --color-success-soft: #f0fdf4;
-  --color-warning: #b45309;
-  --color-warning-soft: #fffbeb;
-  --color-danger: #b91c1c;
-  --color-danger-soft: #fef2f2;
+  /* Aksen biru -> violet */
+  --color-primary: #3f6df2;
+  --color-primary-hover: #2f5be0;
+  --color-primary-soft: #dce7ff;
+  --grad-accent: linear-gradient(135deg, #3f7bf6 0%, #6c5ce7 100%);
+  --grad-canvas: linear-gradient(165deg, #bcc9ee 0%, #cdd2f3 45%, #dde5f5 100%);
+  --grad-hero: linear-gradient(135deg, #2f6bf0 0%, #5a54f2 55%, #8b4df0 100%);
+  --grad-panel: linear-gradient(150deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.78) 100%);
+  --grad-teal: linear-gradient(150deg, rgba(255, 255, 255, 0.95) 0%, rgba(223, 244, 240, 0.85) 100%);
+  --grad-lav: linear-gradient(150deg, rgba(255, 255, 255, 0.95) 0%, rgba(239, 234, 252, 0.85) 100%);
+  --grad-blue: linear-gradient(150deg, rgba(255, 255, 255, 0.95) 0%, rgba(230, 238, 255, 0.85) 100%);
+  --shadow-panel: 0 18px 40px rgba(93, 108, 150, 0.18), 0 4px 12px rgba(93, 108, 150, 0.08);
+  --shadow-neu: 0 18px 40px rgba(93, 108, 150, 0.18), 0 4px 12px rgba(93, 108, 150, 0.08);
+  --shadow-neu-sm: 0 6px 16px rgba(93, 108, 150, 0.14), 0 2px 6px rgba(93, 108, 150, 0.08);
+  --shadow-neu-inset: inset 0 2px 6px rgba(93, 108, 150, 0.12), inset 0 -1px 0 rgba(255, 255, 255, 0.8);
+  --shadow-neu-accent: 0 12px 26px rgba(63, 107, 242, 0.35);
+  --shadow-md: 0 24px 56px rgba(93, 108, 150, 0.28);
+  --color-success: #2f9e6e;
+  --color-success-soft: #dcf3e8;
+  --color-warning: #b3761c;
+  --color-warning-soft: #f7ead2;
+  --color-danger: #c0504d;
+  --color-danger-soft: #f6dedd;
 
-  /* Palet chart muted */
-  --chart-1: #1e40af;
-  --chart-2: #0f766e;
-  --chart-3: #b45309;
-  --chart-4: #9f1239;
-  --chart-5: #4d7c0f;
-  --chart-6: #57534e;
+  /* Palet chart mencolok */
+  --chart-1: #3f7bf6;
+  --chart-2: #14b8a6;
+  --chart-3: #6c5ce7;
+  --chart-4: #f59e0b;
+  --chart-5: #e11d48;
+  --chart-6: #64748b;
 
   /* Jarak */
   --space-1: 4px;
@@ -36,15 +49,13 @@
   --space-6: 32px;
   --space-7: 48px;
 
-  /* Bentuk & bayangan: radius kecil, shadow sangat minimal */
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
   --radius-pill: 999px;
-  --shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.05);
-  --shadow-md: 0 2px 8px rgba(28, 25, 23, 0.08);
 
-  /* Tipografi: hierarchy lebih dominan daripada dekorasi */
+  /* Tipografi */
   --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
   --text-xs: 12px;

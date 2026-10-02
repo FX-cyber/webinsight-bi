@@ -92,7 +92,9 @@ export default function RecordTable({ records }: { records: WebRecord[] }) {
                     {record.title}
                   </button>
                 </td>
-                <td>{record.source}</td>
+                <td>
+                  <span className="cell-tag">{record.source}</span>
+                </td>
                 <td>{record.entity ?? EMPTY_CELL}</td>
                 <td>{record.category ?? EMPTY_CELL}</td>
                 <td>{record.topic ?? EMPTY_CELL}</td>

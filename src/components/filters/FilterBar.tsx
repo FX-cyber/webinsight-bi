@@ -95,13 +95,27 @@ export default function FilterBar() {
       <div className="filter-bar__row">
         <label className="filter-bar__search">
           <span className="filter-bar__label">Cari</span>
-          <input
-            className="input"
-            type="search"
-            placeholder="Cari judul, ringkasan, topik, sumber…"
-            value={searchText}
-            onChange={(event) => setSearchText(event.target.value)}
-          />
+          <span className="search-field">
+            <svg
+              className="search-field__icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+            <input
+              className="input input--search"
+              type="search"
+              placeholder="Cari judul, ringkasan, topik, sumber…"
+              value={searchText}
+              onChange={(event) => setSearchText(event.target.value)}
+            />
+          </span>
         </label>
         <label className="filter-bar__date">
           <span className="filter-bar__label">Dari tanggal</span>

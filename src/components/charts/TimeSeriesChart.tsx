@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
 import {
+  Area,
+  AreaChart,
   CartesianGrid,
-  Line,
-  LineChart,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -34,8 +34,14 @@ export default function TimeSeriesChart({
   return (
     <ChartCard title={title} subtitle={subtitle} isEmpty={series.points.length === 0}>
       <ResponsiveContainer width="100%" height={260}>
-        <LineChart data={series.points} margin={{ top: 8, right: 12, left: -16, bottom: 0 }}>
-          <CartesianGrid stroke="var(--color-border)" vertical={false} />
+        <AreaChart data={series.points} margin={{ top: 8, right: 12, left: -16, bottom: 0 }}>
+          <defs>
+            <linearGradient id="mentionFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#3f7bf6" stopOpacity={0.35} />
+              <stop offset="100%" stopColor="#6c5ce7" stopOpacity={0.03} />
+            </linearGradient>
+          </defs>
+          <CartesianGrid stroke="rgba(93, 108, 150, 0.15)" vertical={false} />
           <XAxis
             dataKey="period"
             tick={{ fontSize: 11 }}
@@ -51,15 +57,16 @@ export default function TimeSeriesChart({
               series.granularity === 'daily' ? formatDateId(String(label)) : String(label)
             }
           />
-          <Line
+          <Area
             type="monotone"
             dataKey="count"
-            stroke="var(--chart-1)"
-            strokeWidth={2}
+            stroke="#3f7bf6"
+            strokeWidth={2.5}
+            fill="url(#mentionFill)"
             dot={series.points.length <= 40}
             isAnimationActive={false}
           />
-        </LineChart>
+        </AreaChart>
       </ResponsiveContainer>
     </ChartCard>
   )
