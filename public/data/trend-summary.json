@@ -1,41 +1,46 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-02T15:34:03Z",
+  "generated_at": "2026-10-05T05:03:11Z",
   "window_hours": 48,
   "recent_window_hours": 24,
   "run": {
-    "id": "run-automated-2026-10-02-1534z",
+    "id": "run-automated-2026-10-05-0437z",
     "mode": "automated",
     "brief": "Perkembangan yang sedang memperoleh perhatian di public web Indonesia lintas domain (Technology & Digital, Business & Economy, Jobs & Career, Education, Tourism, Agriculture & Food, Industry, Public Services, Environment) dalam 48 jam terakhir, dengan recent window 24 jam",
-    "sources_visited": 14,
+    "sources_visited": 22,
     "failures": [
-      "bps.go.id: HTTP 403 saat dibuka via WebFetch untuk rilis ekspor-impor Agustus 2026 (berhasil dibuka via browser)",
-      "presidenri.go.id: HTTP 403 untuk siaran pers pelantikan Menko Hilirisasi dan Transisi Energi",
-      "ekonomi.bisnis.com: HTTP 403 untuk artikel neraca perdagangan dan produksi beras September-November 2026",
-      "kompas.com: HTTP 404 untuk artikel peringatan BMKG hujan lebat 2 Oktober 2026",
-      "megapolitan.kompas.com: HTTP 404 untuk artikel BMKG hujan sedang-lebat Jabodetabek 2-3 Oktober 2026",
-      "kemenpar.go.id: fetch gagal untuk siaran pers Pavilion Wonderful Indonesia di Tourism Expo Japan 2026",
-      "ekon.go.id: fetch gagal untuk artikel strategi pemerintah mengakselerasi pertumbuhan ekonomi",
-      "dgip.go.id: body halaman kosong (0 karakter) untuk artikel komersialisasi paten DJKI, tidak ada konten yang bisa diverifikasi",
-      "news.majalahhortus.com: fetch gagal untuk artikel harga beras turun Rp500 per kg",
-      "metrotvnews.com: fetch gagal untuk artikel skema insentif SPPG Rp2.000 per porsi (artikel cuaca Jabodetabek dari publisher yang sama berhasil dibuka)",
-      "rri.co.id: fetch gagal via WebFetch untuk dua artikel IHSG 2 Oktober 2026 (berhasil dibuka via browser)",
-      "nasional.tvrinews.com dan ekonomi.tvrinews.com: fetch gagal via WebFetch (berhasil dibuka via browser)",
-      "infopublik.id: artikel Komdigi regulasi AI bertanggal 23 Mei 2026, di luar window 48 jam sehingga dibuang",
-      "cnbcindonesia.com: artikel Anthropic membuka kantor di Singapura dibuang karena event tidak spesifik Indonesia (relevansi lemah)",
-      "aceh.tribunnews.com dan surabaya.tribunnews.com: tidak diverifikasi sebagai evidence tambahan",
-      "Domain Technology & Digital dan Education tidak terisi: tidak ditemukan perkembangan spesifik Indonesia dalam window 48 jam dari publisher yang bisa dibuka dan diverifikasi"
+      "money.kompas.com: HTTP 404 untuk dua URL format dash dari indeks pencarian ('impor mesin naik' 3 Okt 2026 dan 'RUU Ketenagakerjaan terbaru' 4 Okt 2026); gagal dibuka via WebFetch maupun browser, URL sudah tidak tersedia",
+      "lestari.kompas.com: HTTP 404 untuk artikel 'Pembangunan Data Center Jatiluhur Dihentikan, IESR Minta Kajian Dampak Dibuka'",
+      "kompas.com/properti: HTTP 404 untuk artikel 'Intip Baterai Raksasa Swiss, AHY Siapkan Teknologi Serupa di PLTA' 4 Okt 2026",
+      "aceh.tribunnews.com: HTTP 403 untuk artikel buruh Aceh desak kenaikan upah minimum 2027",
+      "mediaindonesia.com: HTTP 403 untuk artikel '84 Persen Hotspot Karhutla Terdeteksi di Lahan Non-Managed'",
+      "kabar24.bisnis.com: HTTP 403 untuk artikel 'Link Cek Penerima BSU 2026 Rp900.000 Pakai NIK'",
+      "kemenkoinfra.go.id: HTTP 403 via WebFetch untuk siaran pers SP-340/INFRA/HUMAS/X/2026 (berhasil dibuka via browser)",
+      "kemenkeu.go.id: body halaman via WebFetch hanya berisi CSS dan skrip pelacak tanpa konten artikel (berhasil dibuka via browser)",
+      "kemenkeu.go.id: artikel 'Menkeu Suahasil Nazara Tegaskan Komitmen Jaga Kredibilitas Fiskal Indonesia' bertanggal Jumat 02 Oktober 2026 14.15, di luar window 48 jam sehingga dibuang",
+      "kemenpar.go.id: siaran pers 'Pavilion Wonderful Indonesia di Tourism Expo Japan 2026 Catat Potensi Kunjungan 5.600 Wisatawan' bertanggal 2 Oktober 2026, di luar window 48 jam sehingga dibuang",
+      "betahita.id: artikel 'Dampaknya Belum Dikaji, Proyek Data Center di Jatiluhur Ditunda' bertanggal 2 Oktober 2026, di luar window 48 jam sehingga dibuang",
+      "ekbis.sindonews.com: artikel '84% Hotspot Karhutla Terdeteksi di Lahan Open Access' bertanggal 2 Oktober 2026, di luar window 48 jam sehingga dibuang",
+      "ekonomi.republika.co.id: artikel 'Tata Kelola Lahan Jadi Kunci Pencegahan Kebakaran Hutan dan Lahan' bertanggal 2 Oktober 2026, di luar window 48 jam sehingga dibuang",
+      "wartaekonomi.co.id: artikel skema insentif dapur MBG Rp2.000 per porsi bertanggal Kamis 01 Oktober 2026 21.07 WIB, di luar window 48 jam; indeks pencarian menandainya '12 jam lalu' sehingga tanggal harus diverifikasi dari halaman",
+      "viva.co.id: artikel bahasa Inggris wajib kelas 3 SD dibuang sebagai syndication karena halaman memberi kredit 'ANTARA (ANT)', publisher induk sama dengan bali.antaranews.com yang sudah dipakai sebagai evidence",
+      "nasional.kontan.co.id, cnnindonesia.com, idxchannel.com: artikel insentif SPPG Rp2.000 per porsi tidak dibuka karena tanggal pada indeks pencarian (30 September-2 Oktober 2026) berada di luar window 48 jam",
+      "bps.go.id: rilis inflasi September 2026 (3,28 persen) dan kunjungan wisman Agustus 2026 (1,60 juta) sama-sama bertanggal 1 Oktober 2026, di luar window 48 jam sehingga tidak dijadikan record; data tersebut hanya dipakai sebagai konteks pada artikel dalam window",
+      "Rilis PMI manufaktur September 2026 dan IKI Kemenperin (cnbcindonesia.com, rmol.id, antaranews.com, money.kompas.com) bertanggal 1-2 Oktober 2026, di luar window sehingga domain Industry hanya terisi dari siaran pers Kemenko Infrastruktur",
+      "Domain Technology & Digital tidak terisi: artikel tekno.kompas.com dalam window 4-5 Oktober 2026 (kelangkaan RAM, penyelundupan chip Nvidia, Super Intelligence Force) tidak spesifik Indonesia sehingga relevansi lemah; siaran pers komdigi.go.id yang ditemukan bertanggal Mei-Agustus 2026",
+      "HUT ke-81 TNI 5 Oktober 2026 tidak dimasukkan: tidak ada domain pada taksonomi yang cocok dan liputan yang ditemukan berada di kanal video serta media sosial",
+      "Facebook, Instagram, YouTube, X, dan Threads tidak dipakai sebagai evidence utama (FOREST UPDATE Kementerian Kehutanan 3-4 Oktober 2026, unggahan Kemenpar, Kemenko Infra, Kemensetneg, e100ss, kabartrenggaleknews, indonesiagoid, hariankompas, kadinindonesiainstitute)"
     ]
   },
   "pipeline": {
-    "fetched": 19,
-    "duplicates_removed": 0,
-    "invalid_dropped": 2,
-    "final": 17
+    "fetched": 29,
+    "duplicates_removed": 1,
+    "invalid_dropped": 6,
+    "final": 22
   },
   "topics": [
     {
-      "topic": "SPHP Rice Market Operation",
+      "topic": "Fiscal Deficit and Debt Ratio Discipline",
       "mentions": 1,
       "sources": 1,
       "recent_mentions": 1,
@@ -43,46 +48,15 @@
       "previous_trend_score": null,
       "direction": "flat",
       "top_keywords": [
-        "4.000 ton per hari",
-        "beras SPHP",
-        "Rp12.500 per kg",
-        "stabilisasi harga"
+        "defisit maksimal 3 persen",
+        "utang 60 persen PDB",
+        "Suahasil Nazara",
+        "Komite Stabilitas Sistem Keuangan",
+        "kredibilitas fiskal"
       ]
     },
     {
-      "topic": "Taipei-Bali Direct Flight Connectivity",
-      "mentions": 1,
-      "sources": 1,
-      "recent_mentions": 1,
-      "trend_score": 58.8,
-      "previous_trend_score": null,
-      "direction": "flat",
-      "top_keywords": [
-        "STARLUX Airlines",
-        "Taipei-Denpasar",
-        "130.421 kunjungan",
-        "naik 7,74%",
-        "Kemenpar"
-      ]
-    },
-    {
-      "topic": "Stock Market (IHSG) Movement",
-      "mentions": 2,
-      "sources": 1,
-      "recent_mentions": 2,
-      "trend_score": 54,
-      "previous_trend_score": null,
-      "direction": "flat",
-      "top_keywords": [
-        "IHSG 6.036,89",
-        "0,46 persen",
-        "Rp11,79 triliun",
-        "BEI",
-        "2 Oktober 2026"
-      ]
-    },
-    {
-      "topic": "Rice Production Projection Decline",
+      "topic": "Q4 2026 Wage Subsidy Disbursement",
       "mentions": 2,
       "sources": 2,
       "recent_mentions": 1,
@@ -90,47 +64,15 @@
       "previous_trend_score": null,
       "direction": "flat",
       "top_keywords": [
-        "7,06 juta ton",
-        "turun 11,95%",
-        "September-November 2026",
-        "GKG 12,24 juta ton",
-        "NTP 131,11"
+        "BSU Rp900.000",
+        "13,3 juta pekerja",
+        "kuartal IV 2026",
+        "anggaran Rp12 triliun",
+        "Airlangga Hartarto"
       ]
     },
     {
-      "topic": "Downstreaming Coordinating Ministry Authority Overlap",
-      "mentions": 2,
-      "sources": 2,
-      "recent_mentions": 1,
-      "trend_score": 49,
-      "previous_trend_score": null,
-      "direction": "flat",
-      "top_keywords": [
-        "Kemenko Hilirisasi",
-        "transisi energi",
-        "tumpang tindih kewenangan",
-        "Bahlil Lahadalia",
-        "CORE Indonesia"
-      ]
-    },
-    {
-      "topic": "2027 Minimum Wage Demand Protests",
-      "mentions": 2,
-      "sources": 2,
-      "recent_mentions": 1,
-      "trend_score": 49,
-      "previous_trend_score": null,
-      "direction": "flat",
-      "top_keywords": [
-        "upah minimum 2027",
-        "naik 7,5-9,5%",
-        "aksi serentak",
-        "FSPMI",
-        "KSPI"
-      ]
-    },
-    {
-      "topic": "August Trade Balance & Export Performance",
+      "topic": "English as Mandatory Subject from Grade 3",
       "mentions": 3,
       "sources": 3,
       "recent_mentions": 0,
@@ -138,15 +80,31 @@
       "previous_trend_score": null,
       "direction": "flat",
       "top_keywords": [
-        "surplus US$7,25 miliar",
-        "ekspor US$26,61 miliar",
-        "impor US$23,06 miliar",
-        "nonmigas",
-        "BPS"
+        "bahasa Inggris wajib",
+        "kelas 3 SD",
+        "tahun ajaran 2027/2028",
+        "Abdul Mu'ti",
+        "Kemendikdasmen"
       ]
     },
     {
-      "topic": "MBG Kitchen Incentive Scheme Change",
+      "topic": "Strong Macro Indicators Assessment",
+      "mentions": 3,
+      "sources": 3,
+      "recent_mentions": 0,
+      "trend_score": 37.6,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": [
+        "inflasi 3,28 persen",
+        "surplus US$7,25 miliar",
+        "PMI manufaktur 52,4",
+        "impor mesin naik",
+        "Haryo Limanseto"
+      ]
+    },
+    {
+      "topic": "2026-2027 Economic Stimulus Package",
       "mentions": 2,
       "sources": 2,
       "recent_mentions": 0,
@@ -154,167 +112,311 @@
       "previous_trend_score": null,
       "direction": "flat",
       "top_keywords": [
-        "Rp2.000 per porsi",
-        "5 Oktober 2026",
-        "SPPG",
-        "tidak lagi Rp6 juta per hari"
+        "program magang 150 ribu",
+        "PPh 21 ditanggung pemerintah",
+        "PPN DTP rumah Rp5 miliar",
+        "bantuan pangan beras",
+        "Airlangga Hartarto"
       ]
     },
     {
-      "topic": "Hydrometeorological Weather Warning",
+      "topic": "Karhutla Hotspot Land Governance",
       "mentions": 2,
       "sources": 2,
       "recent_mentions": 0,
       "trend_score": 34,
-      "previous_trend_score": 34,
+      "previous_trend_score": null,
       "direction": "flat",
       "top_keywords": [
-        "peringatan dini BMKG",
-        "2-3 Oktober 2026",
-        "siaga hujan lebat",
-        "Jabodetabek",
-        "Aceh"
+        "28.692 hotspot",
+        "84 persen",
+        "lahan non-terkelola",
+        "Petrus Gunarso",
+        "pencegahan struktural"
+      ]
+    },
+    {
+      "topic": "Aceh Jaya M5.9 Earthquake Sequence",
+      "mentions": 2,
+      "sources": 2,
+      "recent_mentions": 0,
+      "trend_score": 34,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": [
+        "magnitudo 5,9",
+        "Aceh Jaya",
+        "kedalaman 26 km",
+        "dua gempa 42 menit",
+        "tidak berpotensi tsunami"
+      ]
+    },
+    {
+      "topic": "Gastronomy Tourism Development",
+      "mentions": 2,
+      "sources": 2,
+      "recent_mentions": 0,
+      "trend_score": 34,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": [
+        "Wonderful Indonesia Gastronomy 2026",
+        "Widiyanti Putri Wardhana",
+        "Artisan Market",
+        "wisata kuliner",
+        "Yogyakarta"
+      ]
+    },
+    {
+      "topic": "Pumped-Storage Hydropower Technology Adoption",
+      "mentions": 2,
+      "sources": 2,
+      "recent_mentions": 0,
+      "trend_score": 34,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": [
+        "PLTA Cisokan 1.040 MW",
+        "4,3 GW pumped-storage",
+        "RUPTL 2025-2034",
+        "Veytaux II 480 MW",
+        "Menko AHY"
+      ]
+    },
+    {
+      "topic": "Rice Price Upward Pressure into 2027",
+      "mentions": 1,
+      "sources": 1,
+      "recent_mentions": 0,
+      "trend_score": 28.8,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": [
+        "Rp15.769 per kg",
+        "cadangan beras 5,4 juta ton",
+        "El Nino",
+        "triwulan I 2027",
+        "HKTI"
+      ]
+    },
+    {
+      "topic": "MBG Kitchen Incentive Scheme Change",
+      "mentions": 1,
+      "sources": 1,
+      "recent_mentions": 0,
+      "trend_score": 28.8,
+      "previous_trend_score": 34,
+      "direction": "down",
+      "top_keywords": [
+        "Rp2.000 per porsi",
+        "5 Oktober 2026",
+        "SPPG",
+        "CORE Indonesia",
+        "risiko manipulasi porsi"
+      ]
+    },
+    {
+      "topic": "Karhutla Hotspot Decline and Standby Operations",
+      "mentions": 1,
+      "sources": 1,
+      "recent_mentions": 0,
+      "trend_score": 28.8,
+      "previous_trend_score": null,
+      "direction": "flat",
+      "top_keywords": [
+        "turun 605 titik",
+        "Sumatera Selatan 254 titik",
+        "Kementerian Kehutanan",
+        "operasi siaga",
+        "Ristianto Pribadi"
       ]
     }
   ],
   "signals": [
     {
       "id": "SIG-001",
-      "title": "BPS mencatat ekspor Agustus 2026 US$26,61 miliar dan surplus Januari-Agustus US$7,25 miliar",
-      "topic": "August Trade Balance & Export Performance",
-      "entity": "Badan Pusat Statistik",
+      "title": "Menkeu Suahasil Nazara menegaskan defisit APBN dijaga maksimal 3 persen dan rasio utang maksimal 60 persen PDB",
+      "topic": "Fiscal Deficit and Debt Ratio Discipline",
+      "entity": "Kementerian Keuangan",
       "record_ids": [
-        "WEB-001",
-        "WEB-002",
-        "WEB-003"
+        "WEB-009"
       ],
       "sources": [
-        "bps.go.id",
-        "cnbcindonesia.com",
-        "merahputih.com"
+        "kompas.com"
       ],
-      "evidence_count": 3,
-      "status": "cross-source"
+      "evidence_count": 1,
+      "status": "single-source"
     },
     {
       "id": "SIG-002",
-      "title": "BPS memproyeksikan potensi produksi beras September-November 2026 turun 11,95 persen ke 7,06 juta ton",
-      "topic": "Rice Production Projection Decline",
-      "entity": "Badan Pusat Statistik",
+      "title": "BSU 2026 senilai total Rp900.000 disalurkan kepada 13,3 juta pekerja pada kuartal IV 2026",
+      "topic": "Q4 2026 Wage Subsidy Disbursement",
+      "entity": "Kementerian Koordinator Bidang Perekonomian",
       "record_ids": [
-        "WEB-004",
-        "WEB-005"
+        "WEB-017",
+        "WEB-018"
       ],
       "sources": [
-        "tvrinews.com",
-        "antaranews.com"
+        "kompas.com",
+        "detik.com"
       ],
       "evidence_count": 2,
       "status": "cross-source"
     },
     {
       "id": "SIG-003",
-      "title": "Bulog menyalurkan 4.000 ton beras SPHP per hari untuk stabilisasi harga",
-      "topic": "SPHP Rice Market Operation",
-      "entity": "Perum Bulog",
+      "title": "Mendikdasmen menetapkan bahasa Inggris menjadi mapel wajib kelas 3 SD mulai tahun ajaran 2027/2028",
+      "topic": "English as Mandatory Subject from Grade 3",
+      "entity": "Kementerian Pendidikan Dasar dan Menengah",
       "record_ids": [
-        "WEB-006"
+        "WEB-001",
+        "WEB-002",
+        "WEB-003"
       ],
       "sources": [
-        "antaranews.com"
+        "antaranews.com",
+        "jawapos.com",
+        "faktakalbar.id"
       ],
-      "evidence_count": 1,
-      "status": "single-source"
+      "evidence_count": 3,
+      "status": "cross-source"
     },
     {
       "id": "SIG-004",
-      "title": "BGN mengubah insentif dapur SPPG menjadi Rp2.000 per porsi mulai 5 Oktober 2026",
-      "topic": "MBG Kitchen Incentive Scheme Change",
-      "entity": "Badan Gizi Nasional",
+      "title": "Kemenko Perekonomian menyebut inflasi 3,28 persen, surplus US$7,25 miliar, dan PMI 52,4 menjaga fundamental ekonomi",
+      "topic": "Strong Macro Indicators Assessment",
+      "entity": "Kementerian Koordinator Bidang Perekonomian",
+      "record_ids": [
+        "WEB-004",
+        "WEB-005",
+        "WEB-006"
+      ],
+      "sources": [
+        "investortrust.id",
+        "liputan6.com",
+        "suaragarut.id"
+      ],
+      "evidence_count": 3,
+      "status": "cross-source"
+    },
+    {
+      "id": "SIG-005",
+      "title": "Pemerintah melanjutkan paket stimulus ekonomi 2026-2027 dari magang, PPh 21 DTP, hingga PPN DTP perumahan",
+      "topic": "2026-2027 Economic Stimulus Package",
+      "entity": "Kementerian Koordinator Bidang Perekonomian",
       "record_ids": [
         "WEB-007",
         "WEB-008"
       ],
       "sources": [
-        "wartaekonomi.co.id",
-        "kontan.co.id"
-      ],
-      "evidence_count": 2,
-      "status": "cross-source"
-    },
-    {
-      "id": "SIG-005",
-      "title": "Kemenko Hilirisasi dan Transisi Energi baru dinilai berisiko tumpang tindih kewenangan",
-      "topic": "Downstreaming Coordinating Ministry Authority Overlap",
-      "entity": "Kementerian Koordinator Bidang Hilirisasi dan Transisi Energi",
-      "record_ids": [
-        "WEB-009",
-        "WEB-010"
-      ],
-      "sources": [
-        "kompas.id",
-        "kontan.co.id"
+        "kompas.com",
+        "antaranews.com"
       ],
       "evidence_count": 2,
       "status": "cross-source"
     },
     {
       "id": "SIG-006",
-      "title": "BMKG menetapkan status siaga dan waspada hujan lebat untuk 2-3 Oktober 2026",
-      "topic": "Hydrometeorological Weather Warning",
-      "entity": "BMKG",
+      "title": "Pakar menyebut 84 persen dari 28.692 hotspot September 2026 berada di lahan non-terkelola sehingga pencegahan harus struktural",
+      "topic": "Karhutla Hotspot Land Governance",
+      "entity": "Asosiasi Pengusaha Hutan Indonesia",
       "record_ids": [
-        "WEB-011",
-        "WEB-012"
+        "WEB-012",
+        "WEB-013"
       ],
       "sources": [
-        "kompas.tv",
-        "metrotvnews.com"
+        "kompas.com",
+        "rri.co.id"
       ],
       "evidence_count": 2,
       "status": "cross-source"
     },
     {
       "id": "SIG-007",
-      "title": "FSPMI dan KSPI menggelar aksi serentak menuntut upah minimum 2027 naik 7,5-9,5 persen",
-      "topic": "2027 Minimum Wage Demand Protests",
-      "entity": "KSPI",
+      "title": "BMKG mencatat gempa M5,9 di barat daya Aceh Jaya dalam rangkaian dua gempa berselang 42 menit yang tidak berpotensi tsunami",
+      "topic": "Aceh Jaya M5.9 Earthquake Sequence",
+      "entity": "Badan Meteorologi, Klimatologi, dan Geofisika",
       "record_ids": [
-        "WEB-013",
-        "WEB-014"
+        "WEB-015",
+        "WEB-016"
       ],
       "sources": [
-        "rentak.id",
-        "voiceindonesia.co"
+        "bmkg.go.id",
+        "kompas.com"
       ],
       "evidence_count": 2,
       "status": "cross-source"
     },
     {
       "id": "SIG-008",
-      "title": "IHSG ditutup di level 6.036,89 pada perdagangan Jumat 2 Oktober 2026",
-      "topic": "Stock Market (IHSG) Movement",
-      "entity": "Bursa Efek Indonesia",
+      "title": "Kemenpar mengembangkan wisata gastronomi melalui rangkaian Wonderful Indonesia Gastronomy 2026",
+      "topic": "Gastronomy Tourism Development",
+      "entity": "Kementerian Pariwisata",
       "record_ids": [
-        "WEB-015",
-        "WEB-016"
+        "WEB-019",
+        "WEB-020"
       ],
       "sources": [
-        "rri.co.id"
+        "antaranews.com",
+        "tvrinews.com"
       ],
       "evidence_count": 2,
-      "status": "single-source"
+      "status": "cross-source"
     },
     {
       "id": "SIG-009",
-      "title": "STARLUX Airlines membuka penerbangan langsung Taipei-Denpasar mulai 1 Oktober 2026",
-      "topic": "Taipei-Bali Direct Flight Connectivity",
-      "entity": "Kementerian Pariwisata",
+      "title": "Menko AHY menjajaki teknologi pumped-storage Swiss untuk PLTA Cisokan 1.040 MW dan program 4,3 GW dalam RUPTL 2025-2034",
+      "topic": "Pumped-Storage Hydropower Technology Adoption",
+      "entity": "Kementerian Koordinator Bidang Infrastruktur dan Pembangunan Kewilayahan",
       "record_ids": [
-        "WEB-017"
+        "WEB-021",
+        "WEB-022"
       ],
       "sources": [
-        "tvrinews.com"
+        "kemenkoinfra.go.id",
+        "rm.id"
+      ],
+      "evidence_count": 2,
+      "status": "cross-source"
+    },
+    {
+      "id": "SIG-010",
+      "title": "Harga beras diperkirakan cenderung naik hingga triwulan I 2027 di tengah dampak El Nino dan masa paceklik",
+      "topic": "Rice Price Upward Pressure into 2027",
+      "entity": "Himpunan Kerukunan Tani Indonesia",
+      "record_ids": [
+        "WEB-010"
+      ],
+      "sources": [
+        "kompas.id"
+      ],
+      "evidence_count": 1,
+      "status": "single-source"
+    },
+    {
+      "id": "SIG-011",
+      "title": "Insentif dapur MBG berubah menjadi Rp2.000 per porsi mulai 5 Oktober 2026",
+      "topic": "MBG Kitchen Incentive Scheme Change",
+      "entity": "Badan Gizi Nasional",
+      "record_ids": [
+        "WEB-011"
+      ],
+      "sources": [
+        "kompas.com"
+      ],
+      "evidence_count": 1,
+      "status": "single-source"
+    },
+    {
+      "id": "SIG-012",
+      "title": "Kementerian Kehutanan mencatat hotspot karhutla nasional turun 605 titik namun Sumatera Selatan naik ke 254 titik",
+      "topic": "Karhutla Hotspot Decline and Standby Operations",
+      "entity": "Kementerian Kehutanan",
+      "record_ids": [
+        "WEB-014"
+      ],
+      "sources": [
+        "metrotvnews.com"
       ],
       "evidence_count": 1,
       "status": "single-source"
